@@ -8,18 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		DB7601032AC33D9400A606BD /* swifty_proteinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601022AC33D9400A606BD /* swifty_proteinApp.swift */; };
-		DB7601052AC33D9400A606BD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601042AC33D9400A606BD /* ContentView.swift */; };
+		DB7601052AC33D9400A606BD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601042AC33D9400A606BD /* LoginView.swift */; };
 		DB7601072AC33D9800A606BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB7601062AC33D9800A606BD /* Assets.xcassets */; };
 		DB76010B2AC33D9800A606BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB76010A2AC33D9800A606BD /* Preview Assets.xcassets */; };
+		DB7601142AC33E9700A606BD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601132AC33E9700A606BD /* LoginViewModel.swift */; };
+		DB7601172AC33FF600A606BD /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601162AC33FF600A606BD /* SearchView.swift */; };
+		DB7601192AC3400700A606BD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601182AC3400700A606BD /* SearchViewModel.swift */; };
+		DB76011C2AC3409300A606BD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB76011B2AC3409300A606BD /* DetailView.swift */; };
+		DB76011E2AC3409B00A606BD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB76011D2AC3409B00A606BD /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DB7600FF2AC33D9400A606BD /* swifty-protein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swifty-protein.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7601022AC33D9400A606BD /* swifty_proteinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swifty_proteinApp.swift; sourceTree = "<group>"; };
-		DB7601042AC33D9400A606BD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DB7601042AC33D9400A606BD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DB7601062AC33D9800A606BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB7601082AC33D9800A606BD /* swifty_protein.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = swifty_protein.entitlements; sourceTree = "<group>"; };
 		DB76010A2AC33D9800A606BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DB7601132AC33E9700A606BD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		DB7601162AC33FF600A606BD /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		DB7601182AC3400700A606BD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		DB76011B2AC3409300A606BD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		DB76011D2AC3409B00A606BD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +62,8 @@
 		DB7601012AC33D9400A606BD /* swifty-protein */ = {
 			isa = PBXGroup;
 			children = (
+				DB7601112AC33E6500A606BD /* Views */,
 				DB7601022AC33D9400A606BD /* swifty_proteinApp.swift */,
-				DB7601042AC33D9400A606BD /* ContentView.swift */,
 				DB7601062AC33D9800A606BD /* Assets.xcassets */,
 				DB7601082AC33D9800A606BD /* swifty_protein.entitlements */,
 				DB7601092AC33D9800A606BD /* Preview Content */,
@@ -67,6 +77,43 @@
 				DB76010A2AC33D9800A606BD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DB7601112AC33E6500A606BD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB76011A2AC3408600A606BD /* Detail */,
+				DB7601152AC33F5A00A606BD /* Search */,
+				DB7601122AC33E7200A606BD /* Login */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DB7601122AC33E7200A606BD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DB7601042AC33D9400A606BD /* LoginView.swift */,
+				DB7601132AC33E9700A606BD /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		DB7601152AC33F5A00A606BD /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DB7601162AC33FF600A606BD /* SearchView.swift */,
+				DB7601182AC3400700A606BD /* SearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		DB76011A2AC3408600A606BD /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				DB76011B2AC3409300A606BD /* DetailView.swift */,
+				DB76011D2AC3409B00A606BD /* DetailViewModel.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,7 +144,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					DB7600FE2AC33D9400A606BD = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -139,8 +186,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB7601052AC33D9400A606BD /* ContentView.swift in Sources */,
+				DB7601172AC33FF600A606BD /* SearchView.swift in Sources */,
+				DB76011C2AC3409300A606BD /* DetailView.swift in Sources */,
+				DB76011E2AC3409B00A606BD /* DetailViewModel.swift in Sources */,
+				DB7601192AC3400700A606BD /* SearchViewModel.swift in Sources */,
+				DB7601052AC33D9400A606BD /* LoginView.swift in Sources */,
 				DB7601032AC33D9400A606BD /* swifty_proteinApp.swift in Sources */,
+				DB7601142AC33E9700A606BD /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,9 +232,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -238,9 +292,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -264,11 +320,13 @@
 				CODE_SIGN_ENTITLEMENTS = "swifty-protein/swifty_protein.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"swifty-protein/Preview Content\"";
 				DEVELOPMENT_TEAM = 4S2R248368;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -279,7 +337,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -302,11 +360,13 @@
 				CODE_SIGN_ENTITLEMENTS = "swifty-protein/swifty_protein.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"swifty-protein/Preview Content\"";
 				DEVELOPMENT_TEAM = 4S2R248368;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -317,7 +377,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;

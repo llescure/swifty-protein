@@ -11,7 +11,7 @@ import SwiftUI
 struct swifty_proteinApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView(viewModel: .init())
         }
     }
 }
