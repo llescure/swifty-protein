@@ -51,7 +51,9 @@ private extension LoginView {
         VStack(spacing: .zero) {
             Text("Swifty Protein")
                 .font(.largeTitle)
+                .frame(maxHeight: .infinity, alignment: .top)
             LottieView(name: "loginAnimation", loopMode: .loop)
+                .scaledToFill()
             loginMethod()
                 .frame(maxHeight: .infinity, alignment: .top)
         }
@@ -74,6 +76,7 @@ private extension LoginView {
         }, label: {
             Image(systemName: viewModel.biometryType == .touch ? "touchid" : "faceid")
                 .foregroundStyle(viewModel.biometryType == .touch ? .pink : .blue)
+                .font(.largeTitle)
         })
         .buttonStyle(ButtonBouncyStyle())
     }
