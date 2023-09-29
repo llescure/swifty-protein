@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		DB7601032AC33D9400A606BD /* swifty_proteinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601022AC33D9400A606BD /* swifty_proteinApp.swift */; };
 		DB7601052AC33D9400A606BD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601042AC33D9400A606BD /* LoginView.swift */; };
-		DB7601072AC33D9800A606BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB7601062AC33D9800A606BD /* Assets.xcassets */; };
-		DB76010B2AC33D9800A606BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB76010A2AC33D9800A606BD /* Preview Assets.xcassets */; };
 		DB7601142AC33E9700A606BD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601132AC33E9700A606BD /* LoginViewModel.swift */; };
 		DB7601172AC33FF600A606BD /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601162AC33FF600A606BD /* SearchView.swift */; };
 		DB7601192AC3400700A606BD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601182AC3400700A606BD /* SearchViewModel.swift */; };
@@ -24,16 +22,13 @@
 		DBBF67792AC5E8BC00D26BA1 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF67782AC5E8BC00D26BA1 /* LottieView.swift */; };
 		DBD6B9482AC6C972005A9F05 /* introAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DBD6B9472AC6C972005A9F05 /* introAnimation.json */; };
 		DBD6B94A2AC6CB7B005A9F05 /* loginAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DBD6B9492AC6CB7B005A9F05 /* loginAnimation.json */; };
-		DBD6B94D2AC6DE46005A9F05 /* UserAuthenticationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD6B94C2AC6DE46005A9F05 /* UserAuthenticationStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DB7600FF2AC33D9400A606BD /* swifty-protein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swifty-protein.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7601022AC33D9400A606BD /* swifty_proteinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swifty_proteinApp.swift; sourceTree = "<group>"; };
 		DB7601042AC33D9400A606BD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		DB7601062AC33D9800A606BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB7601082AC33D9800A606BD /* swifty_protein.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = swifty_protein.entitlements; sourceTree = "<group>"; };
-		DB76010A2AC33D9800A606BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DB7601132AC33E9700A606BD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DB7601162AC33FF600A606BD /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		DB7601182AC3400700A606BD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -46,7 +41,6 @@
 		DBBF67782AC5E8BC00D26BA1 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		DBD6B9472AC6C972005A9F05 /* introAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = introAnimation.json; path = ../../../../../../Downloads/introAnimation.json; sourceTree = "<group>"; };
 		DBD6B9492AC6CB7B005A9F05 /* loginAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loginAnimation.json; path = ../../../../../../Downloads/loginAnimation.json; sourceTree = "<group>"; };
-		DBD6B94C2AC6DE46005A9F05 /* UserAuthenticationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +74,6 @@
 		DB7601012AC33D9400A606BD /* swifty-protein */ = {
 			isa = PBXGroup;
 			children = (
-				DBD6B94B2AC6DE3A005A9F05 /* Model */,
 				DB9580252AC6C30800C7BC6E /* Design System */,
 				DBA6F06B2AC5775700B4DF19 /* Utils */,
 				DBA6F0682AC479D600B4DF19 /* Coordinators */,
@@ -95,7 +88,6 @@
 		DB7601092AC33D9800A606BD /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				DB76010A2AC33D9800A606BD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -176,7 +168,6 @@
 			children = (
 				DBA6F06C2AC5776E00B4DF19 /* ButtonBouncyStyle.swift */,
 				DBBF67772AC5DEFA00D26BA1 /* Animation */,
-				DB7601062AC33D9800A606BD /* Assets.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -188,14 +179,6 @@
 				DBD6B9472AC6C972005A9F05 /* introAnimation.json */,
 			);
 			path = Animation;
-			sourceTree = "<group>";
-		};
-		DBD6B94B2AC6DE3A005A9F05 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				DBD6B94C2AC6DE46005A9F05 /* UserAuthenticationStatus.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,9 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBD6B94A2AC6CB7B005A9F05 /* loginAnimation.json in Resources */,
-				DB76010B2AC33D9800A606BD /* Preview Assets.xcassets in Resources */,
 				DBD6B9482AC6C972005A9F05 /* introAnimation.json in Resources */,
-				DB7601072AC33D9800A606BD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +264,6 @@
 				DB76011E2AC3409B00A606BD /* DetailViewModel.swift in Sources */,
 				DB7601192AC3400700A606BD /* SearchViewModel.swift in Sources */,
 				DB7601052AC33D9400A606BD /* LoginView.swift in Sources */,
-				DBD6B94D2AC6DE46005A9F05 /* UserAuthenticationStatus.swift in Sources */,
 				DBA6F06D2AC5776E00B4DF19 /* ButtonBouncyStyle.swift in Sources */,
 				DBBF67792AC5E8BC00D26BA1 /* LottieView.swift in Sources */,
 				DB7601032AC33D9400A606BD /* swifty_proteinApp.swift in Sources */,

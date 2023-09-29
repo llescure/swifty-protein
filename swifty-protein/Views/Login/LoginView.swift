@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @ObservedObject var viewModel: LoginViewModel
+    @StateObject var viewModel: LoginViewModel
     
     @State private var login: String = ""
     @State private var password: String = ""
@@ -22,7 +22,7 @@ struct LoginView: View {
     
     init(viewModel: LoginViewModel, onUserAuthenticated: @escaping () -> Void) {
         self.onUserAuthenticated = onUserAuthenticated
-        self._viewModel = ObservedObject(wrappedValue: viewModel)
+        self._viewModel = StateObject(wrappedValue: viewModel)
         self._isBiometryAvailable = State(wrappedValue: viewModel.checkBiometry())
     }
     
@@ -40,6 +40,9 @@ struct LoginView: View {
             .onChange(of: scenePhase) { _ in
                 self.isBiometryAvailable = viewModel.checkBiometry()
             }
+            .alert("Error", isPresented: $viewModel.didAuthenticationFail, actions: {}, message: {
+                Text("⚠️ Authentication failed")
+            })
     }
 }
 
@@ -50,9 +53,6 @@ private extension LoginView {
                 .font(.largeTitle)
             LottieView(name: "loginAnimation", loopMode: .loop)
             loginMethod()
-                .alert("Error", isPresented: $viewModel.didAuthenticationFail, actions: {}, message: {
-                    Text("⚠️ Authentication failed")
-                })
                 .frame(maxHeight: .infinity, alignment: .top)
         }
         .padding(.vertical, Spacing.xxLarge.rawValue)

@@ -33,8 +33,7 @@ extension LoginViewModel {
     func checkBiometry() -> Bool {
         var error: NSError?
         let context = LAContext()
-        
-        didAuthenticationFail = false
+
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             checkBiometryType(context)
             return true
