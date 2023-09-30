@@ -20,8 +20,9 @@
 		DBA6F06A2AC479FD00B4DF19 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6F0692AC479FD00B4DF19 /* MainCoordinator.swift */; };
 		DBA6F06D2AC5776E00B4DF19 /* ButtonBouncyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6F06C2AC5776E00B4DF19 /* ButtonBouncyStyle.swift */; };
 		DBBF67792AC5E8BC00D26BA1 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF67782AC5E8BC00D26BA1 /* LottieView.swift */; };
-		DBD6B9482AC6C972005A9F05 /* introAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DBD6B9472AC6C972005A9F05 /* introAnimation.json */; };
-		DBD6B94A2AC6CB7B005A9F05 /* loginAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DBD6B9492AC6CB7B005A9F05 /* loginAnimation.json */; };
+		DBE029A72AC855E900880DE4 /* introAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DBE029A52AC855E900880DE4 /* introAnimation.json */; };
+		DBE029A82AC855E900880DE4 /* loginAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DBE029A62AC855E900880DE4 /* loginAnimation.json */; };
+		DBE029AB2AC8566200880DE4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DBE029AA2AC8566200880DE4 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +40,9 @@
 		DBA6F0692AC479FD00B4DF19 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		DBA6F06C2AC5776E00B4DF19 /* ButtonBouncyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBouncyStyle.swift; sourceTree = "<group>"; };
 		DBBF67782AC5E8BC00D26BA1 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		DBD6B9472AC6C972005A9F05 /* introAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = introAnimation.json; path = ../../../../../../Downloads/introAnimation.json; sourceTree = "<group>"; };
-		DBD6B9492AC6CB7B005A9F05 /* loginAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loginAnimation.json; path = ../../../../../../Downloads/loginAnimation.json; sourceTree = "<group>"; };
+		DBE029A52AC855E900880DE4 /* introAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = introAnimation.json; path = ../../../../../../../Downloads/introAnimation.json; sourceTree = "<group>"; };
+		DBE029A62AC855E900880DE4 /* loginAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loginAnimation.json; path = ../../../../../../../Downloads/loginAnimation.json; sourceTree = "<group>"; };
+		DBE029AA2AC8566200880DE4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		DB7600F62AC33D9400A606BD = {
 			isa = PBXGroup;
 			children = (
+				DBE029AA2AC8566200880DE4 /* .swiftlint.yml */,
 				DB7601012AC33D9400A606BD /* swifty-protein */,
 				DB7601002AC33D9400A606BD /* Products */,
 			);
@@ -175,8 +178,8 @@
 		DBBF67772AC5DEFA00D26BA1 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				DBD6B9492AC6CB7B005A9F05 /* loginAnimation.json */,
-				DBD6B9472AC6C972005A9F05 /* introAnimation.json */,
+				DBE029A52AC855E900880DE4 /* introAnimation.json */,
+				DBE029A62AC855E900880DE4 /* loginAnimation.json */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				DB7600FB2AC33D9400A606BD /* Sources */,
 				DB7600FC2AC33D9400A606BD /* Frameworks */,
 				DB7600FD2AC33D9400A606BD /* Resources */,
+				DBE029A92AC855F700880DE4 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -219,7 +223,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "swifty-protein" */;
+			buildConfigurationList = DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "Swifty-protein" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -245,12 +249,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBD6B94A2AC6CB7B005A9F05 /* loginAnimation.json in Resources */,
-				DBD6B9482AC6C972005A9F05 /* introAnimation.json in Resources */,
+				DBE029AB2AC8566200880DE4 /* .swiftlint.yml in Resources */,
+				DBE029A82AC855E900880DE4 /* loginAnimation.json in Resources */,
+				DBE029A72AC855E900880DE4 /* introAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DBE029A92AC855F700880DE4 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DB7600FB2AC33D9400A606BD /* Sources */ = {
@@ -401,6 +428,7 @@
 				DEVELOPMENT_TEAM = 4S2R248368;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -441,6 +469,7 @@
 				DEVELOPMENT_TEAM = 4S2R248368;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -471,7 +500,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "swifty-protein" */ = {
+		DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "Swifty-protein" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB76010C2AC33D9800A606BD /* Debug */,

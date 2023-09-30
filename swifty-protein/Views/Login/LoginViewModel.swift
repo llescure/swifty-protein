@@ -44,7 +44,7 @@ extension LoginViewModel {
     }
     
     func checkBiometryType(_ context: LAContext) {
-        switch(context.biometryType) {
+        switch context.biometryType {
         case .touchID:
             biometryType = .touch
         case .faceID:
@@ -59,7 +59,7 @@ extension LoginViewModel {
         let context = LAContext()
         self.userAuthenticationStatus = .loading
 
-        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
+        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, _ in
             Task { @MainActor in
                 if success {
                     self.userAuthenticationStatus = .success
