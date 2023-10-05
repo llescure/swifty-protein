@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB2B57B52ACEEE5600C3097A /* loginAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DB2B57B42ACEEE5600C3097A /* loginAnimation.json */; };
+		DB2B57B72ACEEE5E00C3097A /* introAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DB2B57B62ACEEE5E00C3097A /* introAnimation.json */; };
 		DB7601032AC33D9400A606BD /* swifty_proteinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601022AC33D9400A606BD /* swifty_proteinApp.swift */; };
 		DB7601052AC33D9400A606BD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601042AC33D9400A606BD /* LoginView.swift */; };
 		DB7601142AC33E9700A606BD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601132AC33E9700A606BD /* LoginViewModel.swift */; };
@@ -20,11 +22,11 @@
 		DBA6F06A2AC479FD00B4DF19 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6F0692AC479FD00B4DF19 /* MainCoordinator.swift */; };
 		DBA6F06D2AC5776E00B4DF19 /* ButtonBouncyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6F06C2AC5776E00B4DF19 /* ButtonBouncyStyle.swift */; };
 		DBBF67792AC5E8BC00D26BA1 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF67782AC5E8BC00D26BA1 /* LottieView.swift */; };
-		DBD6B9482AC6C972005A9F05 /* introAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DBD6B9472AC6C972005A9F05 /* introAnimation.json */; };
-		DBD6B94A2AC6CB7B005A9F05 /* loginAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DBD6B9492AC6CB7B005A9F05 /* loginAnimation.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB2B57B42ACEEE5600C3097A /* loginAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loginAnimation.json; sourceTree = "<group>"; };
+		DB2B57B62ACEEE5E00C3097A /* introAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = introAnimation.json; sourceTree = "<group>"; };
 		DB7600FF2AC33D9400A606BD /* swifty-protein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swifty-protein.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7601022AC33D9400A606BD /* swifty_proteinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swifty_proteinApp.swift; sourceTree = "<group>"; };
 		DB7601042AC33D9400A606BD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -39,8 +41,6 @@
 		DBA6F0692AC479FD00B4DF19 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		DBA6F06C2AC5776E00B4DF19 /* ButtonBouncyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBouncyStyle.swift; sourceTree = "<group>"; };
 		DBBF67782AC5E8BC00D26BA1 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		DBD6B9472AC6C972005A9F05 /* introAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = introAnimation.json; path = ../../../../../../Downloads/introAnimation.json; sourceTree = "<group>"; };
-		DBD6B9492AC6CB7B005A9F05 /* loginAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loginAnimation.json; path = ../../../../../../Downloads/loginAnimation.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,8 +175,8 @@
 		DBBF67772AC5DEFA00D26BA1 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				DBD6B9492AC6CB7B005A9F05 /* loginAnimation.json */,
-				DBD6B9472AC6C972005A9F05 /* introAnimation.json */,
+				DB2B57B62ACEEE5E00C3097A /* introAnimation.json */,
+				DB2B57B42ACEEE5600C3097A /* loginAnimation.json */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -219,7 +219,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "swifty-protein" */;
+			buildConfigurationList = DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "Swifty-protein" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -245,8 +245,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBD6B94A2AC6CB7B005A9F05 /* loginAnimation.json in Resources */,
-				DBD6B9482AC6C972005A9F05 /* introAnimation.json in Resources */,
+				DB2B57B52ACEEE5600C3097A /* loginAnimation.json in Resources */,
+				DB2B57B72ACEEE5E00C3097A /* introAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +471,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "swifty-protein" */ = {
+		DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "Swifty-protein" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB76010C2AC33D9800A606BD /* Debug */,
