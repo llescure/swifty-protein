@@ -16,6 +16,7 @@
 		DB7601192AC3400700A606BD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601182AC3400700A606BD /* SearchViewModel.swift */; };
 		DB76011C2AC3409300A606BD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB76011B2AC3409300A606BD /* DetailView.swift */; };
 		DB76011E2AC3409B00A606BD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB76011D2AC3409B00A606BD /* DetailViewModel.swift */; };
+		DB7995CA2ACF37A0000DE064 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = DB7995C92ACF37A0000DE064 /* Contents.json */; };
 		DB9580242AC6BAEF00C7BC6E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DB9580232AC6BAEF00C7BC6E /* Lottie */; };
 		DB9580272AC6C32000C7BC6E /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9580262AC6C32000C7BC6E /* Spacing.swift */; };
 		DB9580292AC6C5D800C7BC6E /* Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9580282AC6C5D800C7BC6E /* Radius.swift */; };
@@ -36,6 +37,7 @@
 		DB7601182AC3400700A606BD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		DB76011B2AC3409300A606BD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		DB76011D2AC3409B00A606BD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		DB7995C92ACF37A0000DE064 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Contents.json; path = "Swifty-protein/Preview Content/Contents.json"; sourceTree = SOURCE_ROOT; };
 		DB9580262AC6C32000C7BC6E /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		DB9580282AC6C5D800C7BC6E /* Radius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radius.swift; sourceTree = "<group>"; };
 		DBA6F0692AC479FD00B4DF19 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		DB7601092AC33D9800A606BD /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				DB7995C92ACF37A0000DE064 /* Contents.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			files = (
 				DB2B57B52ACEEE5600C3097A /* loginAnimation.json in Resources */,
 				DB2B57B72ACEEE5E00C3097A /* introAnimation.json in Resources */,
+				DB7995CA2ACF37A0000DE064 /* Contents.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +425,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Lea.swifty-protein";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -461,7 +466,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Lea.swifty-protein";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
