@@ -13,6 +13,9 @@ final class LoginViewModel: ObservableObject {
     @Published var didAuthenticationFail: Bool = false
     @Published var biometryType: BiometricType = .none
     @Published var isBiometryAvailable = false
+    @Published var login: String = ""
+    @Published var password: String = ""
+    @Published var isTextFieldIsIncorrect: Bool = false
     
     enum UserAuthenticationStatus {
         case loading
@@ -29,6 +32,7 @@ final class LoginViewModel: ObservableObject {
     init() {}
 }
 
+// MARK: - Biometry management
 extension LoginViewModel {
     func checkBiometry() -> Bool {
         var error: NSError?
@@ -72,5 +76,19 @@ extension LoginViewModel {
                 }
             }
         }
+    }
+}
+
+// MARK: - Textfield management
+
+extension LoginViewModel {
+    func checkField() {
+        if login.isEmpty || password.isEmpty {
+            self.isTextFieldIsIncorrect = true
+            self.userAuthenticationStatus = .failure
+            return 
+        }
+        self.isTextFieldIsIncorrect = false
+        self.userAuthenticationStatus = .success
     }
 }
