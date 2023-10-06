@@ -14,14 +14,16 @@
 		DB7601192AC3400700A606BD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601182AC3400700A606BD /* SearchViewModel.swift */; };
 		DB76011C2AC3409300A606BD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB76011B2AC3409300A606BD /* DetailView.swift */; };
 		DB76011E2AC3409B00A606BD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB76011D2AC3409B00A606BD /* DetailViewModel.swift */; };
+		DB7995CA2ACF37A0000DE064 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = DB7995C92ACF37A0000DE064 /* Contents.json */; };
+		DB7995CC2ACF67D0000DE064 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7995CB2ACF67D0000DE064 /* TextFieldModifier.swift */; };
+		DB7995D42ACFEDCE000DE064 /* loginAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DB7995D32ACFEDCE000DE064 /* loginAnimation.json */; };
+		DB7995D62ACFEDD6000DE064 /* introAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DB7995D52ACFEDD6000DE064 /* introAnimation.json */; };
 		DB9580242AC6BAEF00C7BC6E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DB9580232AC6BAEF00C7BC6E /* Lottie */; };
 		DB9580272AC6C32000C7BC6E /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9580262AC6C32000C7BC6E /* Spacing.swift */; };
 		DB9580292AC6C5D800C7BC6E /* Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9580282AC6C5D800C7BC6E /* Radius.swift */; };
 		DBA6F06A2AC479FD00B4DF19 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6F0692AC479FD00B4DF19 /* MainCoordinator.swift */; };
 		DBA6F06D2AC5776E00B4DF19 /* ButtonBouncyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6F06C2AC5776E00B4DF19 /* ButtonBouncyStyle.swift */; };
 		DBBF67792AC5E8BC00D26BA1 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF67782AC5E8BC00D26BA1 /* LottieView.swift */; };
-		DBE029A72AC855E900880DE4 /* introAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DBE029A52AC855E900880DE4 /* introAnimation.json */; };
-		DBE029A82AC855E900880DE4 /* loginAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DBE029A62AC855E900880DE4 /* loginAnimation.json */; };
 		DBE029AB2AC8566200880DE4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DBE029AA2AC8566200880DE4 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
@@ -35,13 +37,15 @@
 		DB7601182AC3400700A606BD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		DB76011B2AC3409300A606BD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		DB76011D2AC3409B00A606BD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		DB7995C92ACF37A0000DE064 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Contents.json; path = "Swifty-protein/Preview Content/Contents.json"; sourceTree = SOURCE_ROOT; };
+		DB7995CB2ACF67D0000DE064 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextFieldModifier.swift; path = "Swifty-protein/Design System/TextFieldModifier.swift"; sourceTree = SOURCE_ROOT; };
+		DB7995D32ACFEDCE000DE064 /* loginAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loginAnimation.json; path = ../../../../../../../Downloads/loginAnimation.json; sourceTree = "<group>"; };
+		DB7995D52ACFEDD6000DE064 /* introAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = introAnimation.json; path = ../../../../../../../Downloads/introAnimation.json; sourceTree = "<group>"; };
 		DB9580262AC6C32000C7BC6E /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		DB9580282AC6C5D800C7BC6E /* Radius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radius.swift; sourceTree = "<group>"; };
 		DBA6F0692AC479FD00B4DF19 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		DBA6F06C2AC5776E00B4DF19 /* ButtonBouncyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBouncyStyle.swift; sourceTree = "<group>"; };
 		DBBF67782AC5E8BC00D26BA1 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		DBE029A52AC855E900880DE4 /* introAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = introAnimation.json; path = ../../../../../../../Downloads/introAnimation.json; sourceTree = "<group>"; };
-		DBE029A62AC855E900880DE4 /* loginAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loginAnimation.json; path = ../../../../../../../Downloads/loginAnimation.json; sourceTree = "<group>"; };
 		DBE029AA2AC8566200880DE4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +95,7 @@
 		DB7601092AC33D9800A606BD /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				DB7995C92ACF37A0000DE064 /* Contents.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 			children = (
 				DB9580262AC6C32000C7BC6E /* Spacing.swift */,
 				DB9580282AC6C5D800C7BC6E /* Radius.swift */,
+				DB7995CB2ACF67D0000DE064 /* TextFieldModifier.swift */,
 			);
 			path = "Design System";
 			sourceTree = "<group>";
@@ -178,8 +184,8 @@
 		DBBF67772AC5DEFA00D26BA1 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				DBE029A52AC855E900880DE4 /* introAnimation.json */,
-				DBE029A62AC855E900880DE4 /* loginAnimation.json */,
+				DB7995D52ACFEDD6000DE064 /* introAnimation.json */,
+				DB7995D32ACFEDCE000DE064 /* loginAnimation.json */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -250,8 +256,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBE029AB2AC8566200880DE4 /* .swiftlint.yml in Resources */,
-				DBE029A82AC855E900880DE4 /* loginAnimation.json in Resources */,
-				DBE029A72AC855E900880DE4 /* introAnimation.json in Resources */,
+				DB7995D42ACFEDCE000DE064 /* loginAnimation.json in Resources */,
+				DB7995CA2ACF37A0000DE064 /* Contents.json in Resources */,
+				DB7995D62ACFEDD6000DE064 /* introAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +298,7 @@
 				DB76011E2AC3409B00A606BD /* DetailViewModel.swift in Sources */,
 				DB7601192AC3400700A606BD /* SearchViewModel.swift in Sources */,
 				DB7601052AC33D9400A606BD /* LoginView.swift in Sources */,
+				DB7995CC2ACF67D0000DE064 /* TextFieldModifier.swift in Sources */,
 				DBA6F06D2AC5776E00B4DF19 /* ButtonBouncyStyle.swift in Sources */,
 				DBBF67792AC5E8BC00D26BA1 /* LottieView.swift in Sources */,
 				DB7601032AC33D9400A606BD /* swifty_proteinApp.swift in Sources */,
@@ -449,7 +457,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Lea.swifty-protein";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -490,7 +499,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Lea.swifty-protein";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
