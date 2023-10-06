@@ -30,7 +30,6 @@ private extension MainCoordinator {
             SearchView()
         }
     }
-
     
     var contentView: some View {
         LoginView(viewModel: .init(), onUserAuthenticated: {

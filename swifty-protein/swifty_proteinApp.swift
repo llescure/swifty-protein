@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct swifty_proteinApp: App {
+struct Swifty_proteinApp: App {
     var body: some Scene {
         WindowGroup {
             MainCoordinator()
