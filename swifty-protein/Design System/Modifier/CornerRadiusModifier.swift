@@ -7,12 +7,8 @@
 
 import SwiftUI
 
-struct CornerRadiusModifier: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+extension View {
+    func cornerRadius(_ radius: Radius) -> some View {
+        self.cornerRadius(radius.rawValue)
     }
-}
-
-#Preview {
-    CornerRadiusModifier()
 }

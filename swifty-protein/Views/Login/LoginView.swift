@@ -60,12 +60,12 @@ private extension LoginView {
             Text("Swifty Protein")
                 .font(.largeTitle)
                 .frame(maxHeight: .infinity, alignment: .top)
-            LottieView(name: "loginAnimation", loopMode: .loop)
+            LottieView(name: "loginAnimation")
                 .scaledToFill()
             loginMethod()
                 .frame(maxHeight: .infinity, alignment: .top)
         }
-        .padding(.vertical, Spacing.xxLarge.rawValue)
+        .padding(.vertical, .xxLarge)
     }
     
     @ViewBuilder
@@ -112,13 +112,13 @@ private extension LoginView {
             }, label: {
                 Text("Log in")
                     .frame(maxWidth: .infinity)
-                    .padding(.all, Spacing.small.rawValue)
+                    .padding(.all, .small)
                     .background(.gray)
-                    .cornerRadius(Radius.medium.rawValue)
+                    .cornerRadius(.medium)
             })
             .buttonStyle(ButtonBouncyStyle())
         }
-        .padding(.horizontal, Spacing.xxLarge.rawValue)
+        .padding(.horizontal, .xxLarge)
     }
     
     func focusNextField() {
@@ -138,7 +138,6 @@ private extension LoginView {
         case password
     }
 }
-
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

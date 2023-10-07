@@ -15,9 +15,13 @@
 		DB76011C2AC3409300A606BD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB76011B2AC3409300A606BD /* DetailView.swift */; };
 		DB76011E2AC3409B00A606BD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB76011D2AC3409B00A606BD /* DetailViewModel.swift */; };
 		DB7995CA2ACF37A0000DE064 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = DB7995C92ACF37A0000DE064 /* Contents.json */; };
-		DB7995CC2ACF67D0000DE064 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7995CB2ACF67D0000DE064 /* TextFieldModifier.swift */; };
-		DB7995D42ACFEDCE000DE064 /* loginAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DB7995D32ACFEDCE000DE064 /* loginAnimation.json */; };
-		DB7995D62ACFEDD6000DE064 /* introAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DB7995D52ACFEDD6000DE064 /* introAnimation.json */; };
+		DB7995DB2AD051CD000DE064 /* Ligand.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7995DA2AD051CD000DE064 /* Ligand.swift */; };
+		DB7995E32AD05306000DE064 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7995E22AD05306000DE064 /* TextFieldModifier.swift */; };
+		DB7995E52AD053E2000DE064 /* introAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DB7995E42AD053E2000DE064 /* introAnimation.json */; };
+		DB7995E72AD053E9000DE064 /* loginAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DB7995E62AD053E9000DE064 /* loginAnimation.json */; };
+		DB7995E92AD054D3000DE064 /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB7995E82AD054D3000DE064 /* ligands.txt */; };
+		DB7995EB2AD18D89000DE064 /* PaddingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7995EA2AD18D89000DE064 /* PaddingModifier.swift */; };
+		DB7995ED2AD18E26000DE064 /* CornerRadiusModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7995EC2AD18E26000DE064 /* CornerRadiusModifier.swift */; };
 		DB9580242AC6BAEF00C7BC6E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DB9580232AC6BAEF00C7BC6E /* Lottie */; };
 		DB9580272AC6C32000C7BC6E /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9580262AC6C32000C7BC6E /* Spacing.swift */; };
 		DB9580292AC6C5D800C7BC6E /* Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9580282AC6C5D800C7BC6E /* Radius.swift */; };
@@ -38,9 +42,13 @@
 		DB76011B2AC3409300A606BD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		DB76011D2AC3409B00A606BD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		DB7995C92ACF37A0000DE064 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Contents.json; path = "Swifty-protein/Preview Content/Contents.json"; sourceTree = SOURCE_ROOT; };
-		DB7995CB2ACF67D0000DE064 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextFieldModifier.swift; path = "Swifty-protein/Design System/TextFieldModifier.swift"; sourceTree = SOURCE_ROOT; };
-		DB7995D32ACFEDCE000DE064 /* loginAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loginAnimation.json; path = ../../../../../../../Downloads/loginAnimation.json; sourceTree = "<group>"; };
-		DB7995D52ACFEDD6000DE064 /* introAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = introAnimation.json; path = ../../../../../../../Downloads/introAnimation.json; sourceTree = "<group>"; };
+		DB7995DA2AD051CD000DE064 /* Ligand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ligand.swift; sourceTree = "<group>"; };
+		DB7995E22AD05306000DE064 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextFieldModifier.swift; path = "Swifty-protein/Design System/Modifier/TextFieldModifier.swift"; sourceTree = SOURCE_ROOT; };
+		DB7995E42AD053E2000DE064 /* introAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = introAnimation.json; path = ../../../../../../../../Downloads/introAnimation.json; sourceTree = "<group>"; };
+		DB7995E62AD053E9000DE064 /* loginAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loginAnimation.json; path = ../../../../../../../../Downloads/loginAnimation.json; sourceTree = "<group>"; };
+		DB7995E82AD054D3000DE064 /* ligands.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = ligands.txt; path = "swifty-protein/Models/ligands.txt"; sourceTree = SOURCE_ROOT; };
+		DB7995EA2AD18D89000DE064 /* PaddingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PaddingModifier.swift; path = "Swifty-protein/Design System/Modifier/PaddingModifier.swift"; sourceTree = SOURCE_ROOT; };
+		DB7995EC2AD18E26000DE064 /* CornerRadiusModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CornerRadiusModifier.swift; path = "Swifty-protein/Design System/Modifier/CornerRadiusModifier.swift"; sourceTree = SOURCE_ROOT; };
 		DB9580262AC6C32000C7BC6E /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		DB9580282AC6C5D800C7BC6E /* Radius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radius.swift; sourceTree = "<group>"; };
 		DBA6F0692AC479FD00B4DF19 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -81,8 +89,8 @@
 		DB7601012AC33D9400A606BD /* swifty-protein */ = {
 			isa = PBXGroup;
 			children = (
+				DB7995D92AD051BD000DE064 /* Models */,
 				DB9580252AC6C30800C7BC6E /* Design System */,
-				DBA6F06B2AC5775700B4DF19 /* Utils */,
 				DBA6F0682AC479D600B4DF19 /* Coordinators */,
 				DB7601112AC33E6500A606BD /* Views */,
 				DB7601022AC33D9400A606BD /* swifty_proteinApp.swift */,
@@ -137,12 +145,30 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
-		DB9580252AC6C30800C7BC6E /* Design System */ = {
+		DB7995D92AD051BD000DE064 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB7995E82AD054D3000DE064 /* ligands.txt */,
+				DB7995DA2AD051CD000DE064 /* Ligand.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DB7995DC2AD05217000DE064 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
 				DB9580262AC6C32000C7BC6E /* Spacing.swift */,
 				DB9580282AC6C5D800C7BC6E /* Radius.swift */,
-				DB7995CB2ACF67D0000DE064 /* TextFieldModifier.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		DB9580252AC6C30800C7BC6E /* Design System */ = {
+			isa = PBXGroup;
+			children = (
+				DBBF67712AC5DED100D26BA1 /* Modifier */,
+				DB7995DC2AD05217000DE064 /* Constant */,
+				DBA6F06B2AC5775700B4DF19 /* Utils */,
 			);
 			path = "Design System";
 			sourceTree = "<group>";
@@ -159,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				DBBF67722AC5DED700D26BA1 /* Assets */,
-				DBBF67712AC5DED100D26BA1 /* Modifier */,
 				DBBF67782AC5E8BC00D26BA1 /* LottieView.swift */,
 			);
 			path = Utils;
@@ -168,6 +193,10 @@
 		DBBF67712AC5DED100D26BA1 /* Modifier */ = {
 			isa = PBXGroup;
 			children = (
+				DBA6F06C2AC5776E00B4DF19 /* ButtonBouncyStyle.swift */,
+				DB7995E22AD05306000DE064 /* TextFieldModifier.swift */,
+				DB7995EA2AD18D89000DE064 /* PaddingModifier.swift */,
+				DB7995EC2AD18E26000DE064 /* CornerRadiusModifier.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -175,7 +204,6 @@
 		DBBF67722AC5DED700D26BA1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				DBA6F06C2AC5776E00B4DF19 /* ButtonBouncyStyle.swift */,
 				DBBF67772AC5DEFA00D26BA1 /* Animation */,
 			);
 			path = Assets;
@@ -184,8 +212,8 @@
 		DBBF67772AC5DEFA00D26BA1 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				DB7995D52ACFEDD6000DE064 /* introAnimation.json */,
-				DB7995D32ACFEDCE000DE064 /* loginAnimation.json */,
+				DB7995E62AD053E9000DE064 /* loginAnimation.json */,
+				DB7995E42AD053E2000DE064 /* introAnimation.json */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -255,10 +283,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB7995E72AD053E9000DE064 /* loginAnimation.json in Resources */,
+				DB7995E92AD054D3000DE064 /* ligands.txt in Resources */,
 				DBE029AB2AC8566200880DE4 /* .swiftlint.yml in Resources */,
-				DB7995D42ACFEDCE000DE064 /* loginAnimation.json in Resources */,
+				DB7995E52AD053E2000DE064 /* introAnimation.json in Resources */,
 				DB7995CA2ACF37A0000DE064 /* Contents.json in Resources */,
-				DB7995D62ACFEDD6000DE064 /* introAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,17 +321,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB7601172AC33FF600A606BD /* SearchView.swift in Sources */,
+				DB7995EB2AD18D89000DE064 /* PaddingModifier.swift in Sources */,
 				DB9580272AC6C32000C7BC6E /* Spacing.swift in Sources */,
 				DBA6F06A2AC479FD00B4DF19 /* MainCoordinator.swift in Sources */,
 				DB76011C2AC3409300A606BD /* DetailView.swift in Sources */,
+				DB7995ED2AD18E26000DE064 /* CornerRadiusModifier.swift in Sources */,
 				DB76011E2AC3409B00A606BD /* DetailViewModel.swift in Sources */,
 				DB7601192AC3400700A606BD /* SearchViewModel.swift in Sources */,
+				DB7995E32AD05306000DE064 /* TextFieldModifier.swift in Sources */,
 				DB7601052AC33D9400A606BD /* LoginView.swift in Sources */,
-				DB7995CC2ACF67D0000DE064 /* TextFieldModifier.swift in Sources */,
 				DBA6F06D2AC5776E00B4DF19 /* ButtonBouncyStyle.swift in Sources */,
 				DBBF67792AC5E8BC00D26BA1 /* LottieView.swift in Sources */,
 				DB7601032AC33D9400A606BD /* swifty_proteinApp.swift in Sources */,
 				DB7601142AC33E9700A606BD /* LoginViewModel.swift in Sources */,
+				DB7995DB2AD051CD000DE064 /* Ligand.swift in Sources */,
 				DB9580292AC6C5D800C7BC6E /* Radius.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

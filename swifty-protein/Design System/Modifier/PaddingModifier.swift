@@ -7,12 +7,8 @@
 
 import SwiftUI
 
-struct PaddingModifier: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+extension View {
+    func padding(_ edges: Edge.Set, _ length: Spacing) -> some View {
+        self.padding(edges, length.rawValue)
     }
-}
-
-#Preview {
-    PaddingModifier()
 }
