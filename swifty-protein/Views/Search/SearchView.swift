@@ -8,41 +8,53 @@
 import SwiftUI
 
 struct SearchView: View {
+    @StateObject private var viewModel: SearchViewModel
+    private let onChooseLigand: (Ligand) -> Void
+    
+    init(onChooseLigand: @escaping (Ligand) -> Void) {
+        _viewModel = StateObject(wrappedValue: .init())
+        self.onChooseLigand = onChooseLigand
+    }
+    
     var body: some View {
-        VStack {
-            HStack {
-                Text("Ligments")
-                Image(systemName: "magnifyingglass.circle.fill")
-                    .symbolRenderingMode(.monochrome)
+        contentView
+    }
+}
+
+private extension SearchView {
+    var contentView: some View {
+        listView
+            .overlay {
+                if viewModel.searchResults.isEmpty {
+                    emptySearch
+                }
             }
-            .frame(maxWidth: .infinity, alignment: .top)
-            .clipped()
-            Divider()
-            VStack {
-                ScrollView {
-                    VStack {
-                        ForEach(0..<5) { _ in // Replace with your data model here
-                            HStack {
-                                Text("Hello, World!")
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .clipped()
-                                Image(systemName: "chevron.right")
-                                    .symbolRenderingMode(.monochrome)
-                            }
-                            .frame(height: 20)
-                            .clipped()
-                        }
-                    }
+    }
+    
+    var listView: some View {
+        List {
+            ForEach(viewModel.searchResults) { ligand in
+                Button(action: {
+                    onChooseLigand(ligand) }) {
+                    Text(ligand.id)
                 }
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .clipped()
+        .listStyle(.plain)
+        .searchable(text: $viewModel.searchLigand, placement: .navigationBarDrawer(displayMode: .always))
+    }
+    
+    var emptySearch: some View {
+        VStack(spacing: Spacing.medium.rawValue) {
+            Image(systemName: "magnifyingglass")
+                .font(.largeTitle)
+            Text("No result were found for \(viewModel.searchLigand)")
+        }
     }
 }
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView(onChooseLigand: {_ in })
     }
 }
