@@ -59,11 +59,10 @@ private extension LoginView {
         VStack(spacing: .zero) {
             Text("Swifty Protein")
                 .font(.largeTitle)
-                .frame(maxHeight: .infinity, alignment: .top)
 //            LottieView(name: "loginAnimation")
-                .scaledToFill()
+//                .scaledToFit()
+//                .frame(maxHeight: .infinity)
             loginMethod()
-                .frame(maxHeight: .infinity, alignment: .top)
         }
         .padding(.vertical, .xxLarge)
     }
@@ -112,7 +111,7 @@ private extension LoginView {
             }, label: {
                 Text("Log in")
                     .frame(maxWidth: .infinity)
-                    .padding(.all, .small)
+                    .padding(.all, .medium)
                     .background(.gray)
                     .cornerRadius(.medium)
             })
@@ -123,9 +122,13 @@ private extension LoginView {
     
     func focusNextField() {
         if currentFieldFocused == .login {
+            if viewModel.password.isEmpty {
+                viewModel.shouldCheckTextField = false
+            }
             viewModel.checkField()
             currentFieldFocused = .password
         } else {
+            viewModel.shouldCheckTextField = true
             viewModel.checkField()
             if !viewModel.isTextFieldIsIncorrect {
                 onUserAuthenticated()
