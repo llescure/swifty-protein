@@ -15,13 +15,15 @@ class   CylinderLine: SCNNode
         v2: SCNVector3,//destination
         radius: CGFloat,//somes option for the cylinder
         radSegmentCount: Int, //other option
-        color: UIColor )// color of your node object
+        color: UIColor ,// color of your node object
+        name: String )// name of your node object
     {
         super.init()
         //Calcul the height of our line
         let  height = v1.distance(receiver: v2)
         //set position to v1 coordonate
         position = v1
+        self.name = name
         //Create the second node to draw direction vector
         let nodeV2 = SCNNode()
         //define his position
@@ -50,6 +52,7 @@ class   CylinderLine: SCNNode
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    // add a name to the node
 }
 
 private extension SCNVector3{

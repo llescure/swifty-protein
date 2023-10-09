@@ -11,7 +11,9 @@ import SceneKit
 
 struct SceneKitView: UIViewRepresentable {
     @Binding var searchText: String
-    
+    @Binding var toggleHydrogen: Bool
+    @Binding var alternativeForm:  Bool
+
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
@@ -39,13 +41,29 @@ struct SceneKitView: UIViewRepresentable {
     
     func updateUIView(_ uiView: SCNView, context: Context) {
         context.coordinator.scnView = uiView
-        
-        if (searchText.count) == 0 {
+        if !toggleHydrogen {
             uiView.scene?.rootNode.enumerateChildNodes { (node, stop) in
-                node.removeFromParentNode()
+                // Retirer les atomes d'hydrogène
+                if node.name?.contains("Atom") == true && node.name?.contains("H") == true {
+                    node.removeFromParentNode()
+                }
+                // Retirer les connexions impliquant de l'hydrogène
+                if node.name?.contains("Connection") == true && (node.name?.contains("H") == true) {
+                    node.removeFromParentNode()
+                }
+                
             }
         }
-        // init camera
+
+        if !alternativeForm {
+            uiView.scene?.rootNode.enumerateChildNodes { (node, stop) in
+                // Retirer les sphères
+                if node.name?.contains("Atom") == true {
+                    node.removeFromParentNode()
+                }
+            }
+        }
+        
         var cameraNode = uiView.scene?.rootNode.childNode(withName: "cameraNode", recursively: false)
         
         if (cameraNode == nil) {
@@ -153,7 +171,8 @@ struct SceneKitView: UIViewRepresentable {
                     let y = Float(words[1]) ?? 0.0
                     let z = Float(words[2]) ?? 0.0
                     let name = String(words[3])
-                    if (name != "H") {
+                    // we add every atom except hydrogen except if the toggle is on
+                    if (name != "H" || toggleHydrogen) {
                         atoms.append(Atom(id: atoms.count + 1, name: name, radius: 0.3, x: x, y: y, z: z))
                     }
                     atomCount -= 1
@@ -178,7 +197,11 @@ struct SceneKitView: UIViewRepresentable {
     
     func createAtom(uiView: SCNView, atom: Atom) {
         guard let color = color(for: atom.name) else { return }
-        createSphere(uiView: uiView, radius: CGFloat(atom.radius), color: color, x: atom.x, y: atom.y, z: atom.z, atom: atom)
+        if alternativeForm {
+            createCube(uiView: uiView, radius: CGFloat(atom.radius), color: color, x: atom.x, y: atom.y, z: atom.z, atom: atom)
+        } else {
+            createSphere(uiView: uiView, radius: CGFloat(atom.radius), color: color, x: atom.x, y: atom.y, z: atom.z, atom: atom)
+        }
     }
     
     func createSphere(uiView: SCNView, radius: CGFloat, color: UIColor, x: Float, y: Float, z: Float, atom: Atom) {
@@ -196,6 +219,23 @@ struct SceneKitView: UIViewRepresentable {
         sphere.materials = [material]
         
         uiView.scene?.rootNode.addChildNode(sphereNode)
+    }
+
+    func createCube(uiView: SCNView, radius: CGFloat, color: UIColor, x: Float, y: Float, z: Float, atom: Atom) {
+        // add a cube
+        let cube = SCNBox(width: radius * 2, height: radius * 2, length: radius * 2, chamferRadius: 0)
+        let cubeNode = SCNNode(geometry: cube)
+        cubeNode.position = SCNVector3(x: x, y: y, z: z)
+        
+        // add metadatas
+        cubeNode.name = "Atom \(atom.id): \(atom.name)"
+        
+        // add a material to the cube
+        let material = SCNMaterial()
+        material.diffuse.contents = color
+        cube.materials = [material]
+        
+        uiView.scene?.rootNode.addChildNode(cubeNode)
     }
     
     func createConnection (uiView: SCNView, from: Atom, to: Atom, weight: Int) {
@@ -219,7 +259,7 @@ struct SceneKitView: UIViewRepresentable {
             radius = 0.1
         case 3:
             offsets = [SCNVector3(-perpendicular.x * 0.25, -perpendicular.y * 0.25, -perpendicular.z * 0.25),
-                       SCNVector3(0, 0, 0),
+                        SCNVector3(0, 0, 0),
                        SCNVector3(perpendicular.x * 0.25, perpendicular.y * 0.25, perpendicular.z * 0.25)]
             radius = 0.07
         default:
@@ -232,8 +272,8 @@ struct SceneKitView: UIViewRepresentable {
             
             let halfDistance = SCNVector3((adjustedFrom.x + adjustedTo.x) / 2, (adjustedFrom.y + adjustedTo.y) / 2, (adjustedFrom.z + adjustedTo.z) / 2)
             
-            uiView.scene?.rootNode.addChildNode(CylinderLine(parent: uiView.scene!.rootNode, v1: adjustedFrom, v2: halfDistance, radius: radius, radSegmentCount: 10, color: fromColor))
-            uiView.scene?.rootNode.addChildNode(CylinderLine(parent: uiView.scene!.rootNode, v1: halfDistance, v2: adjustedTo, radius: radius, radSegmentCount: 10, color: toColor))
+            uiView.scene?.rootNode.addChildNode(CylinderLine(parent: uiView.scene!.rootNode, v1: adjustedFrom, v2: halfDistance, radius: radius, radSegmentCount: 10, color: fromColor, name: "Connection \(from.name) to \(to.name)"))
+            uiView.scene?.rootNode.addChildNode(CylinderLine(parent: uiView.scene!.rootNode, v1: halfDistance, v2: adjustedTo, radius: radius, radSegmentCount: 10, color: toColor, name: "Connection \(from.name) to \(to.name)"))
         }
     }
 }
