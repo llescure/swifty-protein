@@ -10,10 +10,17 @@ import SwiftUI
 struct MainCoordinator: View {
     @State private var path: [PushableView] = []
     
+    @Environment(\.scenePhase) var scenePhase
+    
     var body: some View {
         NavigationStack(path: $path) {
             contentView
                 .navigationDestination(for: PushableView.self, destination: pushableView)
+        }
+        .onChange(of: scenePhase) { _ in
+            if scenePhase == .background {
+                path.removeAll()
+            }
         }
     }
 }
