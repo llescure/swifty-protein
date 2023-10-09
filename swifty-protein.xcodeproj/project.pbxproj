@@ -22,6 +22,7 @@
 		DB7995E92AD054D3000DE064 /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB7995E82AD054D3000DE064 /* ligands.txt */; };
 		DB7995EB2AD18D89000DE064 /* PaddingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7995EA2AD18D89000DE064 /* PaddingModifier.swift */; };
 		DB7995ED2AD18E26000DE064 /* CornerRadiusModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7995EC2AD18E26000DE064 /* CornerRadiusModifier.swift */; };
+		DB7995EF2AD3E966000DE064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB7995EE2AD3E966000DE064 /* Assets.xcassets */; };
 		DB9580242AC6BAEF00C7BC6E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DB9580232AC6BAEF00C7BC6E /* Lottie */; };
 		DB9580272AC6C32000C7BC6E /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9580262AC6C32000C7BC6E /* Spacing.swift */; };
 		DB9580292AC6C5D800C7BC6E /* Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9580282AC6C5D800C7BC6E /* Radius.swift */; };
@@ -49,6 +50,7 @@
 		DB7995E82AD054D3000DE064 /* ligands.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = ligands.txt; path = "swifty-protein/Models/ligands.txt"; sourceTree = SOURCE_ROOT; };
 		DB7995EA2AD18D89000DE064 /* PaddingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PaddingModifier.swift; path = "Swifty-protein/Design System/Modifier/PaddingModifier.swift"; sourceTree = SOURCE_ROOT; };
 		DB7995EC2AD18E26000DE064 /* CornerRadiusModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CornerRadiusModifier.swift; path = "Swifty-protein/Design System/Modifier/CornerRadiusModifier.swift"; sourceTree = SOURCE_ROOT; };
+		DB7995EE2AD3E966000DE064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB9580262AC6C32000C7BC6E /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		DB9580282AC6C5D800C7BC6E /* Radius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radius.swift; sourceTree = "<group>"; };
 		DBA6F0692AC479FD00B4DF19 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		DBBF67722AC5DED700D26BA1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				DB7995EE2AD3E966000DE064 /* Assets.xcassets */,
 				DBBF67772AC5DEFA00D26BA1 /* Animation */,
 			);
 			path = Assets;
@@ -287,6 +290,7 @@
 				DB7995E92AD054D3000DE064 /* ligands.txt in Resources */,
 				DBE029AB2AC8566200880DE4 /* .swiftlint.yml in Resources */,
 				DB7995E52AD053E2000DE064 /* introAnimation.json in Resources */,
+				DB7995EF2AD3E966000DE064 /* Assets.xcassets in Resources */,
 				DB7995CA2ACF37A0000DE064 /* Contents.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
