@@ -42,11 +42,11 @@ struct SceneKitView: UIViewRepresentable {
         context.coordinator.scnView = uiView
         if !toggleHydrogen {
             uiView.scene?.rootNode.enumerateChildNodes { (node, stop) in
-                // Retirer les atomes d'hydrogène
+                // pop out hydrogen atom
                 if node.name?.contains("Atom") == true && node.name?.contains("H") == true {
                     node.removeFromParentNode()
                 }
-                // Retirer les connexions impliquant de l'hydrogène
+                // pop out hydrogen connection
                 if node.name?.contains("Connection") == true && (node.name?.contains("H") == true) {
                     node.removeFromParentNode()
                 }
@@ -56,7 +56,7 @@ struct SceneKitView: UIViewRepresentable {
 
         if !alternativeForm {
             uiView.scene?.rootNode.enumerateChildNodes { (node, stop) in
-                // Retirer les sphères
+                // pop out alternative form
                 if node.name?.contains("Atom") == true {
                     node.removeFromParentNode()
                 }
@@ -95,7 +95,7 @@ struct SceneKitView: UIViewRepresentable {
                 }
             }
         }
-        // Light positions
+        // lights position
         setupLights(in: uiView.scene?.rootNode)
     }
     
@@ -136,7 +136,7 @@ struct SceneKitView: UIViewRepresentable {
             guard let data = data else { return }
             let sdfString = String(data: data, encoding: .utf8) ?? ""
             
-            // Ici, tu peux appeler ta fonction de parsing existante
+            // here, you can call your existing parsing function
             let (fetchedAtoms, fetchedConnects) = self.parseSdfFile(contents: sdfString)
             atoms = fetchedAtoms
             connects = fetchedConnects
@@ -278,4 +278,4 @@ struct SceneKitView: UIViewRepresentable {
 }
 
 // TODO :
-// - Ajouter un bouton share pour partager l'image
+// - Add a share button to share the image

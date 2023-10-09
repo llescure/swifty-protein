@@ -22,7 +22,7 @@ class Coordinator: NSObject, UIGestureRecognizerDelegate {
         print("handleTap function")
         guard let scnView = self.scnView else { return }
         
-        // Attribut camera name
+        // Attribute camera name
         if scnView.allowsCameraControl, scnView.pointOfView?.name == nil {
             scnView.pointOfView?.name = "userControlledCamera"
         }
@@ -43,7 +43,7 @@ class Coordinator: NSObject, UIGestureRecognizerDelegate {
     }
     
     func showInfoCapsule(message: String) {
-        // Crée la capsule (UIView)
+        // Create the capsule (UIView)
         let capsule = UILabel()
         capsule.text = message
         capsule.font = UIFont(name: "HelveticaNeue", size: 20)
@@ -53,14 +53,14 @@ class Coordinator: NSObject, UIGestureRecognizerDelegate {
         capsule.layer.cornerRadius = 10
         capsule.clipsToBounds = true
 
-        // Positionne la capsule
+        // Position the capsule
         let capsuleSize = CGSize(width: 200, height: 50)
         capsule.frame = CGRect(x: 100, y: 100, width: capsuleSize.width, height: capsuleSize.height)
         
-        // Ajoute la capsule à la vue
+        // Add the capsule to the view
         scnView?.addSubview(capsule)
         
-        // Fait disparaître la capsule après 3 secondes
+        // Make the capsule disappear after 3 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             capsule.removeFromSuperview()
         }
@@ -68,12 +68,12 @@ class Coordinator: NSObject, UIGestureRecognizerDelegate {
 
     func handleAtomTap(_ result: SCNHitTestResult, cameraNode: SCNNode) {
         if let name = result.node.name {
-            // Affiche le nom et l'ID de l'atome dans une fenêtre d'alerte
+            // Show the name and ID of the atom in an alert window
             showInfoCapsule(message: name)
 
             let atomPosition = result.node.position
             
-            // Modification de la position de la caméra
+            // Modification of the camera position
             SCNTransaction.begin()
             SCNTransaction.animationDuration = 0.5
             cameraNode.position = SCNVector3(x: atomPosition.x, y: atomPosition.y, z: 10)
@@ -82,7 +82,7 @@ class Coordinator: NSObject, UIGestureRecognizerDelegate {
     }
 
     func handleEmptySpaceTap (cameraNode: SCNNode) {
-        // Ajustement de la position de la caméra si aucun atome n'est touché
+        // Adjust camera position if no atom is touched
         SCNTransaction.begin()
         SCNTransaction.animationDuration = 0.5
         cameraNode.position = SCNVector3(x: 0, y: 0, z: 50)

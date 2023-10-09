@@ -18,10 +18,11 @@ class   CylinderLine: SCNNode {
         name: String )// name of your node object
     {
         super.init()
-        // Calcul the height of our line
+        // Calculate the height of our line
         let  height = v1.distance(receiver: v2)
-        // set position to v1 coordonate
+        // set position to v1 coordinate
         position = v1
+        // add a name to the node
         self.name = name
         // Create the second node to draw direction vector
         let nodeV2 = SCNNode()
@@ -42,7 +43,7 @@ class   CylinderLine: SCNNode {
         zAlign.addChildNode(nodeCyl)
         // Add it to child
         addChildNode(zAlign)
-        // set contrainte direction to our vector
+        // set constraint direction to our vector
         constraints = [SCNLookAtConstraint(target: nodeV2)]
     }
     override init() {
@@ -51,7 +52,6 @@ class   CylinderLine: SCNNode {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    // add a name to the node
 }
 
 private extension SCNVector3 {
