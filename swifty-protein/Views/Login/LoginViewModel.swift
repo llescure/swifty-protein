@@ -16,7 +16,7 @@ final class LoginViewModel: ObservableObject {
     @Published var login: String = ""
     @Published var password: String = ""
     @Published var isTextFieldIsIncorrect: Bool = false
-    
+        
     enum UserAuthenticationStatus {
         case loading
         case success
@@ -29,7 +29,7 @@ final class LoginViewModel: ObservableObject {
         case face
     }
     
-    init() {}
+    init() { }
 }
 
 // MARK: - Biometry management

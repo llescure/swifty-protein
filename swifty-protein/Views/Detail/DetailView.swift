@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct DetailView: View {
+    let id: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        contentView
+    }
+}
+
+private extension DetailView {
+    var contentView: some View {
+        Image(systemName: "microbe")
+            .font(.largeTitle)
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(id: "16A")
     }
 }

@@ -19,21 +19,28 @@ struct MainCoordinator: View {
 }
 
 private extension MainCoordinator {
-    enum PushableView {
+    enum PushableView: Hashable {
         case search
+        case detail(Ligand)
     }
     
     @ViewBuilder
     func pushableView(_ view: PushableView) -> some View {
         switch view {
         case .search:
-            SearchView()
+            SearchView { ligand in
+                path.append(.detail(ligand))
+            }
+        case let .detail(ligand):
+            DetailView(id: ligand.id)
+                .navigationTitle(ligand.id)
+                .navigationBarTitleDisplayMode(.large)
         }
     }
     
     var contentView: some View {
-        LoginView(viewModel: .init(), onUserAuthenticated: {
+        LoginView(viewModel: .init()) {
             path.append(.search)
-        })
+        }
     }
 }
