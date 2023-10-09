@@ -8,21 +8,22 @@
 import Foundation
 import SceneKit
 
-class   CylinderLine: SCNNode
-{
-    init( parent: SCNNode,//Needed to add destination point of your line
-        v1: SCNVector3,//source
-        v2: SCNVector3,//destination
-        radius: CGFloat,//somes option for the cylinder
-        radSegmentCount: Int, //other option
-        color: UIColor )// color of your node object
+class   CylinderLine: SCNNode {
+    init(parent: SCNNode,// Needed to add destination point of your line
+         v1: SCNVector3,// source
+         v2: SCNVector3,// destination
+         radius: CGFloat,// somes option for the cylinder
+         radSegmentCount: Int, // other option
+         color: UIColor ,// color of your node object
+        name: String )// name of your node object
     {
         super.init()
         // Calcul the height of our line
         let  height = v1.distance(receiver: v2)
         // set position to v1 coordonate
         position = v1
-        //Create the second node to draw direction vector
+        self.name = name
+        // Create the second node to draw direction vector
         let nodeV2 = SCNNode()
         // define his position
         nodeV2.position = v2
