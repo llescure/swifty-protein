@@ -15,6 +15,7 @@ struct TextFieldModifier: ViewModifier {
             .cornerRadius(Radius.medium.rawValue)
             .autocorrectionDisabled(true)
             .textInputAutocapitalization(.never)
+            .tint(.gray)
     }
 }
 

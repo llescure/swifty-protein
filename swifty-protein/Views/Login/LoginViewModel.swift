@@ -16,6 +16,7 @@ final class LoginViewModel: ObservableObject {
     @Published var login: String = ""
     @Published var password: String = ""
     @Published var isTextFieldIsIncorrect: Bool = false
+    @Published var shouldCheckTextField: Bool = false
         
     enum UserAuthenticationStatus {
         case loading
@@ -83,12 +84,10 @@ extension LoginViewModel {
 
 extension LoginViewModel {
     func checkField() {
-        if login.isEmpty || password.isEmpty {
+        if login.isEmpty || password.isEmpty && shouldCheckTextField {
             self.isTextFieldIsIncorrect = true
-            self.userAuthenticationStatus = .failure
             return 
         }
         self.isTextFieldIsIncorrect = false
-        self.userAuthenticationStatus = .success
     }
 }
