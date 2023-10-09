@@ -35,9 +35,9 @@ private extension SearchView {
         List {
             ForEach(viewModel.searchResults) { ligand in
                 Button(action: {
-                    onChooseLigand(ligand) }) {
+                    onChooseLigand(ligand) }, label: {
                     Text(ligand.id)
-                }
+                })
             }
         }
         .listStyle(.plain)
