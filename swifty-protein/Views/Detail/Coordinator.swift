@@ -27,13 +27,13 @@ class Coordinator: NSObject, UIGestureRecognizerDelegate {
             scnView.pointOfView?.name = "userControlledCamera"
         }
         
-        let p = gestureRecognize.location(in: scnView)
-        let hitResults = scnView.hitTest(p, options: [:])
+        let gesture = gestureRecognize.location(in: scnView)
+        let hitResults = scnView.hitTest(gesture, options: [:])
         
         if let cameraNode = scnView.scene?.rootNode.childNode(withName: "userControlledCamera", recursively: true) {
             scnView.pointOfView = cameraNode // Use own camera
             scnView.allowsCameraControl = false // Disable auto camera
-            if hitResults.count > 0 {
+            if !hitResults.isEmpty {
                 handleAtomTap(hitResults[0], cameraNode: cameraNode)
             } else {
                 handleEmptySpaceTap(cameraNode: cameraNode)
@@ -81,7 +81,7 @@ class Coordinator: NSObject, UIGestureRecognizerDelegate {
         }
     }
 
-    func handleEmptySpaceTap (cameraNode: SCNNode){
+    func handleEmptySpaceTap (cameraNode: SCNNode) {
         // Ajustement de la position de la caméra si aucun atome n'est touché
         SCNTransaction.begin()
         SCNTransaction.animationDuration = 0.5

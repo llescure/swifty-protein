@@ -5,7 +5,6 @@
 //  Created by Julien Richard on 09/10/2023.
 //
 
-//import Foundation
 import SwiftUI
 import SceneKit
 
@@ -40,15 +39,15 @@ struct SceneKitView: UIViewRepresentable {
     func updateUIView(_ uiView: SCNView, context: Context) {
         context.coordinator.scnView = uiView
         
-        if (searchText.count) == 0 {
-            uiView.scene?.rootNode.enumerateChildNodes { (node, stop) in
+        if searchText.isEmpty {
+            uiView.scene?.rootNode.enumerateChildNodes { (node, _) in
                 node.removeFromParentNode()
             }
         }
         // init camera
         var cameraNode = uiView.scene?.rootNode.childNode(withName: "cameraNode", recursively: false)
         
-        if (cameraNode == nil) {
+        if cameraNode == nil {
             cameraNode = SCNNode()
             cameraNode?.camera = SCNCamera()
             cameraNode?.name = "cameraNode"
@@ -113,7 +112,7 @@ struct SceneKitView: UIViewRepresentable {
         let urlString = "https://files.rcsb.org/ligands/view/\(moleculeCode)_ideal.sdf"
         guard let url = URL(string: urlString) else { return }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        URLSession.shared.dataTask(with: url) { data, _, _ in
             defer { dispatchGroup.leave() }
             
             guard let data = data else { return }
@@ -130,7 +129,7 @@ struct SceneKitView: UIViewRepresentable {
         }
     }
     
-    func parseSdfFile (contents: String) -> ([Atom], [Connect]){
+    func parseSdfFile (contents: String) -> ([Atom], [Connect]) {
         var atoms: [Atom] = []
         var connects: [Connect] = []
         do {
@@ -153,7 +152,7 @@ struct SceneKitView: UIViewRepresentable {
                     let y = Float(words[1]) ?? 0.0
                     let z = Float(words[2]) ?? 0.0
                     let name = String(words[3])
-                    if (name != "H") {
+                    if name != "H" {
                         atoms.append(Atom(id: atoms.count + 1, name: name, radius: 0.3, x: x, y: y, z: z))
                     }
                     atomCount -= 1

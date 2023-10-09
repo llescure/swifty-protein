@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 struct Atom {
     let id: Int
     let name: String
@@ -15,4 +14,3 @@ struct Atom {
     let y: Float
     let z: Float
 }
-
