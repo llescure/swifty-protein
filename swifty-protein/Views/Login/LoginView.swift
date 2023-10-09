@@ -60,7 +60,7 @@ private extension LoginView {
             Text("Swifty Protein")
                 .font(.largeTitle)
                 .frame(maxHeight: .infinity, alignment: .top)
-            LottieView(name: "loginAnimation")
+//            LottieView(name: "loginAnimation")
                 .scaledToFill()
             loginMethod()
                 .frame(maxHeight: .infinity, alignment: .top)

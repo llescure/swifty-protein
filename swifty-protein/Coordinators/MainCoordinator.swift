@@ -39,7 +39,7 @@ private extension MainCoordinator {
                 path.append(.detail(ligand))
             }
         case let .detail(ligand):
-            DetailView(id: ligand.id)
+            DetailView(searchText: ligand.id)
                 .navigationTitle(ligand.id)
                 .navigationBarTitleDisplayMode(.large)
         }
