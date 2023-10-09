@@ -73,7 +73,7 @@ struct SceneKitView: UIViewRepresentable {
             for connect in connects {
                 if let from = atoms.first(where: {$0.id == connect.from}) {
                     if let to = atoms.first(where: {$0.id == connect.to}) {
-                        self.createConnection(uiView: uiView, from: from, to: to)
+                        self.createConnection(uiView: uiView, from: from, to: to, weight: connect.weight)
                     }
                 }
             }
@@ -198,23 +198,43 @@ struct SceneKitView: UIViewRepresentable {
         uiView.scene?.rootNode.addChildNode(sphereNode)
     }
     
-    func createConnection (uiView: SCNView, from: Atom, to: Atom) {
+    func createConnection (uiView: SCNView, from: Atom, to: Atom, weight: Int) {
         guard let fromColor = color(for: from.name) else { return }
         guard let toColor = color(for: to.name) else { return }
-        print ("from: \(from.id) to: \(to.id)")
-        // add coordinates of the first atom
-        let fromNode = SCNNode()
-        fromNode.position = SCNVector3(x: from.x, y: from.y, z: from.z)
+        var radius = 0.2
+        let direction = SCNVector3(to.x - from.x, to.y - from.y, to.z - from.z)
+        let length = sqrt(direction.x * direction.x + direction.y * direction.y + direction.z * direction.z)
+        let normalizedDirection = SCNVector3(direction.x / length, direction.y / length, direction.z / length)
         
-        // add coordinates of the second atom
-        let toNode = SCNNode()
-        toNode.position = SCNVector3(x: to.x, y: to.y, z: to.z)
+        let perpendicular = SCNVector3(-normalizedDirection.y, normalizedDirection.x, 0)
         
-        // add line from A to half distance between A and B
-        let halfDistance = SCNVector3((from.x + to.x) / 2, (from.y + to.y) / 2, (from.z + to.z) / 2)
+        let offsets: [SCNVector3]
         
-        uiView.scene?.rootNode.addChildNode(CylinderLine(parent: uiView.scene!.rootNode, v1: fromNode.position, v2: halfDistance, radius: 0.2, radSegmentCount: 10, color: fromColor))
-        uiView.scene?.rootNode.addChildNode(CylinderLine(parent: uiView.scene!.rootNode, v1: halfDistance, v2: toNode.position, radius: 0.2, radSegmentCount: 10, color: toColor))
+        switch weight {
+        case 1:
+            offsets = [SCNVector3(0, 0, 0)]
+        case 2:
+            offsets = [SCNVector3(-perpendicular.x * 0.2, -perpendicular.y * 0.2, -perpendicular.z * 0.2),
+                       SCNVector3(perpendicular.x * 0.2, perpendicular.y * 0.2, perpendicular.z * 0.2)]
+            radius = 0.1
+        case 3:
+            offsets = [SCNVector3(-perpendicular.x * 0.25, -perpendicular.y * 0.25, -perpendicular.z * 0.25),
+                       SCNVector3(0, 0, 0),
+                       SCNVector3(perpendicular.x * 0.25, perpendicular.y * 0.25, perpendicular.z * 0.25)]
+            radius = 0.07
+        default:
+            offsets = [SCNVector3(0, 0, 0)]
+        }
+        
+        for offset in offsets {
+            let adjustedFrom = SCNVector3(from.x + offset.x, from.y + offset.y, from.z + offset.z)
+            let adjustedTo = SCNVector3(to.x + offset.x, to.y + offset.y, to.z + offset.z)
+            
+            let halfDistance = SCNVector3((adjustedFrom.x + adjustedTo.x) / 2, (adjustedFrom.y + adjustedTo.y) / 2, (adjustedFrom.z + adjustedTo.z) / 2)
+            
+            uiView.scene?.rootNode.addChildNode(CylinderLine(parent: uiView.scene!.rootNode, v1: adjustedFrom, v2: halfDistance, radius: radius, radSegmentCount: 10, color: fromColor))
+            uiView.scene?.rootNode.addChildNode(CylinderLine(parent: uiView.scene!.rootNode, v1: halfDistance, v2: adjustedTo, radius: radius, radSegmentCount: 10, color: toColor))
+        }
     }
 }
 

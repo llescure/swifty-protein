@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BECC5CD2AD415DD0032BC1D /* CylinderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECC5C62AD415DC0032BC1D /* CylinderLine.swift */; };
+		8BECC5CE2AD415DD0032BC1D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECC5C72AD415DC0032BC1D /* Coordinator.swift */; };
+		8BECC5CF2AD415DD0032BC1D /* Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECC5C82AD415DD0032BC1D /* Atom.swift */; };
+		8BECC5D02AD415DD0032BC1D /* Connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECC5C92AD415DD0032BC1D /* Connect.swift */; };
+		8BECC5D12AD415DD0032BC1D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECC5CA2AD415DD0032BC1D /* DetailView.swift */; };
+		8BECC5D22AD415DD0032BC1D /* SceneKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECC5CB2AD415DD0032BC1D /* SceneKitView.swift */; };
+		8BECC5D32AD415DD0032BC1D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECC5CC2AD415DD0032BC1D /* Utils.swift */; };
 		DB7601032AC33D9400A606BD /* swifty_proteinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601022AC33D9400A606BD /* swifty_proteinApp.swift */; };
 		DB7601052AC33D9400A606BD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601042AC33D9400A606BD /* LoginView.swift */; };
 		DB7601142AC33E9700A606BD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601132AC33E9700A606BD /* LoginViewModel.swift */; };
 		DB7601172AC33FF600A606BD /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601162AC33FF600A606BD /* SearchView.swift */; };
 		DB7601192AC3400700A606BD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601182AC3400700A606BD /* SearchViewModel.swift */; };
 		DB76011C2AC3409300A606BD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB76011B2AC3409300A606BD /* DetailView.swift */; };
-		DB76011E2AC3409B00A606BD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB76011D2AC3409B00A606BD /* DetailViewModel.swift */; };
 		DB7995CA2ACF37A0000DE064 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = DB7995C92ACF37A0000DE064 /* Contents.json */; };
 		DB7995DB2AD051CD000DE064 /* Ligand.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7995DA2AD051CD000DE064 /* Ligand.swift */; };
 		DB7995E32AD05306000DE064 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7995E22AD05306000DE064 /* TextFieldModifier.swift */; };
-		DB7995E52AD053E2000DE064 /* introAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DB7995E42AD053E2000DE064 /* introAnimation.json */; };
-		DB7995E72AD053E9000DE064 /* loginAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DB7995E62AD053E9000DE064 /* loginAnimation.json */; };
 		DB7995E92AD054D3000DE064 /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB7995E82AD054D3000DE064 /* ligands.txt */; };
 		DB7995EB2AD18D89000DE064 /* PaddingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7995EA2AD18D89000DE064 /* PaddingModifier.swift */; };
 		DB7995ED2AD18E26000DE064 /* CornerRadiusModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7995EC2AD18E26000DE064 /* CornerRadiusModifier.swift */; };
@@ -33,6 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8BECC5C62AD415DC0032BC1D /* CylinderLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylinderLine.swift; sourceTree = "<group>"; };
+		8BECC5C72AD415DC0032BC1D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8BECC5C82AD415DD0032BC1D /* Atom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atom.swift; sourceTree = "<group>"; };
+		8BECC5C92AD415DD0032BC1D /* Connect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connect.swift; sourceTree = "<group>"; };
+		8BECC5CA2AD415DD0032BC1D /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		8BECC5CB2AD415DD0032BC1D /* SceneKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneKitView.swift; sourceTree = "<group>"; };
+		8BECC5CC2AD415DD0032BC1D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		DB7600FF2AC33D9400A606BD /* swifty-protein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swifty-protein.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7601022AC33D9400A606BD /* swifty_proteinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swifty_proteinApp.swift; sourceTree = "<group>"; };
 		DB7601042AC33D9400A606BD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -41,12 +52,9 @@
 		DB7601162AC33FF600A606BD /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		DB7601182AC3400700A606BD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		DB76011B2AC3409300A606BD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		DB76011D2AC3409B00A606BD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		DB7995C92ACF37A0000DE064 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Contents.json; path = "Swifty-protein/Preview Content/Contents.json"; sourceTree = SOURCE_ROOT; };
 		DB7995DA2AD051CD000DE064 /* Ligand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ligand.swift; sourceTree = "<group>"; };
 		DB7995E22AD05306000DE064 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextFieldModifier.swift; path = "Swifty-protein/Design System/Modifier/TextFieldModifier.swift"; sourceTree = SOURCE_ROOT; };
-		DB7995E42AD053E2000DE064 /* introAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = introAnimation.json; path = ../../../../../../../../Downloads/introAnimation.json; sourceTree = "<group>"; };
-		DB7995E62AD053E9000DE064 /* loginAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loginAnimation.json; path = ../../../../../../../../Downloads/loginAnimation.json; sourceTree = "<group>"; };
 		DB7995E82AD054D3000DE064 /* ligands.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = ligands.txt; path = "swifty-protein/Models/ligands.txt"; sourceTree = SOURCE_ROOT; };
 		DB7995EA2AD18D89000DE064 /* PaddingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PaddingModifier.swift; path = "Swifty-protein/Design System/Modifier/PaddingModifier.swift"; sourceTree = SOURCE_ROOT; };
 		DB7995EC2AD18E26000DE064 /* CornerRadiusModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CornerRadiusModifier.swift; path = "Swifty-protein/Design System/Modifier/CornerRadiusModifier.swift"; sourceTree = SOURCE_ROOT; };
@@ -142,7 +150,13 @@
 			isa = PBXGroup;
 			children = (
 				DB76011B2AC3409300A606BD /* DetailView.swift */,
-				DB76011D2AC3409B00A606BD /* DetailViewModel.swift */,
+				8BECC5C82AD415DD0032BC1D /* Atom.swift */,
+				8BECC5C92AD415DD0032BC1D /* Connect.swift */,
+				8BECC5C72AD415DC0032BC1D /* Coordinator.swift */,
+				8BECC5C62AD415DC0032BC1D /* CylinderLine.swift */,
+				8BECC5CA2AD415DD0032BC1D /* DetailView.swift */,
+				8BECC5CB2AD415DD0032BC1D /* SceneKitView.swift */,
+				8BECC5CC2AD415DD0032BC1D /* Utils.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -215,8 +229,6 @@
 		DBBF67772AC5DEFA00D26BA1 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				DB7995E62AD053E9000DE064 /* loginAnimation.json */,
-				DB7995E42AD053E2000DE064 /* introAnimation.json */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -260,7 +272,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "Swifty-protein" */;
+			buildConfigurationList = DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "swifty-protein" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -286,10 +298,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB7995E72AD053E9000DE064 /* loginAnimation.json in Resources */,
 				DB7995E92AD054D3000DE064 /* ligands.txt in Resources */,
 				DBE029AB2AC8566200880DE4 /* .swiftlint.yml in Resources */,
-				DB7995E52AD053E2000DE064 /* introAnimation.json in Resources */,
 				DB7995EF2AD3E966000DE064 /* Assets.xcassets in Resources */,
 				DB7995CA2ACF37A0000DE064 /* Contents.json in Resources */,
 			);
@@ -330,15 +340,21 @@
 				DBA6F06A2AC479FD00B4DF19 /* MainCoordinator.swift in Sources */,
 				DB76011C2AC3409300A606BD /* DetailView.swift in Sources */,
 				DB7995ED2AD18E26000DE064 /* CornerRadiusModifier.swift in Sources */,
-				DB76011E2AC3409B00A606BD /* DetailViewModel.swift in Sources */,
 				DB7601192AC3400700A606BD /* SearchViewModel.swift in Sources */,
+				8BECC5CE2AD415DD0032BC1D /* Coordinator.swift in Sources */,
+				8BECC5CF2AD415DD0032BC1D /* Atom.swift in Sources */,
+				8BECC5D12AD415DD0032BC1D /* DetailView.swift in Sources */,
 				DB7995E32AD05306000DE064 /* TextFieldModifier.swift in Sources */,
 				DB7601052AC33D9400A606BD /* LoginView.swift in Sources */,
 				DBA6F06D2AC5776E00B4DF19 /* ButtonBouncyStyle.swift in Sources */,
 				DBBF67792AC5E8BC00D26BA1 /* LottieView.swift in Sources */,
+				8BECC5D32AD415DD0032BC1D /* Utils.swift in Sources */,
+				8BECC5D02AD415DD0032BC1D /* Connect.swift in Sources */,
 				DB7601032AC33D9400A606BD /* swifty_proteinApp.swift in Sources */,
+				8BECC5CD2AD415DD0032BC1D /* CylinderLine.swift in Sources */,
 				DB7601142AC33E9700A606BD /* LoginViewModel.swift in Sources */,
 				DB7995DB2AD051CD000DE064 /* Ligand.swift in Sources */,
+				8BECC5D22AD415DD0032BC1D /* SceneKitView.swift in Sources */,
 				DB9580292AC6C5D800C7BC6E /* Radius.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,7 +485,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"swifty-protein/Preview Content\"";
-				DEVELOPMENT_TEAM = 4S2R248368;
+				DEVELOPMENT_TEAM = 86VT643277;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -511,7 +527,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"swifty-protein/Preview Content\"";
-				DEVELOPMENT_TEAM = 4S2R248368;
+				DEVELOPMENT_TEAM = 86VT643277;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -546,7 +562,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "Swifty-protein" */ = {
+		DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "swifty-protein" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB76010C2AC33D9800A606BD /* Debug */,
