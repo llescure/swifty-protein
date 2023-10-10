@@ -10,6 +10,7 @@ import SwiftUI
 struct LaunchScreenView: View {
     var body: some View {
         LottieView(name: "introAnimation")
+            .scaledToFit()
     }
 }
 
