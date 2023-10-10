@@ -13,8 +13,7 @@ struct DetailView: View {
     @State var toggleHydrogen: Bool = false
     @State var alternativeForm: Bool = false
     @State var isLoading: Bool = true
-    @State var isError: Bool = false
-    @Binding var path: [MainCoordinator.PushableView]
+    @Binding var isError: Bool
     
     var body: some View {
         VStack {
@@ -32,13 +31,6 @@ struct DetailView: View {
             }
             ZStack {
                 SceneKitView(searchText: $searchText, toggleHydrogen: $toggleHydrogen, alternativeForm: $alternativeForm, isLoading: $isLoading, isError: $isError)
-                    .alert(isPresented: $isError) {
-                        Alert(title: Text("Error"), message: Text("An error occured while loading the molecule"), dismissButton: .default(Text("OK")) {
-                            isError = false
-                            path.removeLast()
-                        })
-                    }
-
                 if isLoading {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: .gray))
