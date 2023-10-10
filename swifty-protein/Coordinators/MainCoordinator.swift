@@ -25,7 +25,7 @@ struct MainCoordinator: View {
     }
 }
 
-private extension MainCoordinator {
+internal extension MainCoordinator {
     enum PushableView: Hashable {
         case search
         case detail(Ligand)
@@ -39,9 +39,9 @@ private extension MainCoordinator {
                 path.append(.detail(ligand))
             }
         case let .detail(ligand):
-            DetailView(searchText: ligand.id, toggleHydrogen: false, alternativeForm: false, isLoading: false)
+            DetailView(searchText: ligand.id, path: $path)
                 .navigationTitle(ligand.id)
-                .navigationBarTitleDisplayMode(.large)
+                .navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.large)
         }
     }
     

@@ -12,7 +12,9 @@ struct SceneKitView: UIViewRepresentable {
     @Binding var searchText: String
     @Binding var toggleHydrogen: Bool
     @Binding var alternativeForm:  Bool
-
+    @Binding var isLoading: Bool
+    @Binding var isError: Bool
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
@@ -39,9 +41,15 @@ struct SceneKitView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: SCNView, context: Context) {
+        print ("Update UI View")
         context.coordinator.scnView = uiView
         if !toggleHydrogen {
             uiView.scene?.rootNode.enumerateChildNodes { (node, stop) in
+                // pop out lights
+                if node.name?.contains("Light") == true {
+                    node.removeFromParentNode()
+                }
+                
                 // pop out hydrogen atom
                 if node.name?.contains("Atom") == true && node.name?.contains("H") == true {
                     node.removeFromParentNode()
@@ -50,12 +58,16 @@ struct SceneKitView: UIViewRepresentable {
                 if node.name?.contains("Connection") == true && (node.name?.contains("H") == true) {
                     node.removeFromParentNode()
                 }
-                
             }
         }
 
         if !alternativeForm {
             uiView.scene?.rootNode.enumerateChildNodes { (node, stop) in
+                // pop out lights
+                if node.name?.contains("Light") == true {
+                    node.removeFromParentNode()
+                }
+                
                 // pop out alternative form
                 if node.name?.contains("Atom") == true {
                     node.removeFromParentNode()
@@ -75,9 +87,7 @@ struct SceneKitView: UIViewRepresentable {
         if uiView.allowsCameraControl, uiView.pointOfView?.name == nil {
             uiView.pointOfView?.name = "userControlledCamera"
         }
-        
-        print("View initiale lors de l'update de la vue: \(uiView.pointOfView?.name ?? "")")
-        
+                
         // add camera position
         cameraNode?.position = SCNVector3(x: 0, y: 0, z: 50)
         
@@ -97,6 +107,8 @@ struct SceneKitView: UIViewRepresentable {
         }
         // lights position
         setupLights(in: uiView.scene?.rootNode)
+        
+        
     }
     
     func setupLights(in rootNode: SCNNode?) {
@@ -112,6 +124,7 @@ struct SceneKitView: UIViewRepresentable {
         for position in lightPositions {
             let lightNode = SCNNode()
             lightNode.light = SCNLight()
+            lightNode.name = "Light"
             lightNode.light?.type = .omni
             lightNode.light?.intensity = 2000
             lightNode.light?.color = UIColor(white: 0.5, alpha: 1)
@@ -144,6 +157,7 @@ struct SceneKitView: UIViewRepresentable {
         
         dispatchGroup.notify(queue: .main) {
             completion(atoms, connects)
+            isLoading = false
         }
     }
     
@@ -163,6 +177,11 @@ struct SceneKitView: UIViewRepresentable {
                     connectCount = Int(counts[1]) ?? 0
                     isAtomSection = true
                     continue
+                }
+                if (atomCount > 1 && connectCount < 1) {
+                    print ("Error while fetching")
+                    isError = true
+                    return (atoms, connects)
                 }
                 if isAtomSection && atomCount > 0 {
                     let words = line.split(separator: " ", maxSplits: 10, omittingEmptySubsequences: true)
@@ -251,17 +270,14 @@ struct SceneKitView: UIViewRepresentable {
         
         switch weight {
         case 1:
+            radius = 0.2
             offsets = [SCNVector3(0, 0, 0)]
         case 2:
+            radius = 0.1
             offsets = [SCNVector3(-perpendicular.x * 0.2, -perpendicular.y * 0.2, -perpendicular.z * 0.2),
                        SCNVector3(perpendicular.x * 0.2, perpendicular.y * 0.2, perpendicular.z * 0.2)]
-            radius = 0.1
-        case 3:
-            offsets = [SCNVector3(-perpendicular.x * 0.25, -perpendicular.y * 0.25, -perpendicular.z * 0.25),
-                        SCNVector3(0, 0, 0),
-                       SCNVector3(perpendicular.x * 0.25, perpendicular.y * 0.25, perpendicular.z * 0.25)]
-            radius = 0.07
         default:
+            radius = 0.2
             offsets = [SCNVector3(0, 0, 0)]
         }
         
