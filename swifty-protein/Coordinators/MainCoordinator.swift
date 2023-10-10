@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainCoordinator: View {
     @State private var path: [PushableView] = []
+    @State private var isError: Bool = false
     @State private var introDidComplete: Bool = false
     
     @Environment(\.scenePhase) var scenePhase
@@ -34,7 +35,7 @@ struct MainCoordinator: View {
     }
 }
 
-private extension MainCoordinator {
+internal extension MainCoordinator {
     enum PushableView: Hashable {
         case search
         case detail(Ligand)
@@ -48,9 +49,15 @@ private extension MainCoordinator {
                 path.append(.detail(ligand))
             }
         case let .detail(ligand):
-            DetailView(searchText: ligand.id, toggleHydrogen: false, alternativeForm: false, isLoading: false)
+            DetailView(searchText: ligand.id, isError: $isError)
                 .navigationTitle(ligand.id)
-                .navigationBarTitleDisplayMode(.large)
+                .navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.large)
+                .alert(isPresented: $isError) {
+                    Alert(title: Text("Error"), message: Text("⚠️ An error occured while loading the molecule"), dismissButton: .default(Text("OK")) {
+                        isError = false
+                        path.removeLast()
+                    })
+                }
         }
     }
     

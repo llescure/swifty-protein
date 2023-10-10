@@ -10,12 +10,12 @@ import SceneKit
 
 class   CylinderLine: SCNNode {
     init(parent: SCNNode,// Needed to add destination point of your line
-        v1: SCNVector3,// source
-        v2: SCNVector3,// destination
-        radius: CGFloat,// somes option for the cylinder
-        radSegmentCount: Int, // other option
-        color: UIColor ,// color of your node object
-        name: String )// name of your node object
+         v1: SCNVector3,// source
+         v2: SCNVector3,// destination
+         radius: CGFloat,// somes option for the cylinder
+         radSegmentCount: Int, // other option
+         color: UIColor,// color of your node object
+         name: String )// name of your node object
     {
         super.init()
         // Calculate the height of our line
