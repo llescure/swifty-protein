@@ -286,7 +286,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "Swifty-protein" */;
+			buildConfigurationList = DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "swifty-protein" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -341,7 +341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -578,7 +578,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "Swifty-protein" */ = {
+		DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "swifty-protein" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB76010C2AC33D9800A606BD /* Debug */,

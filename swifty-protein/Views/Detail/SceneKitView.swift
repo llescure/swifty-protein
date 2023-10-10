@@ -107,7 +107,6 @@ struct SceneKitView: UIViewRepresentable {
         }
         // lights position
         setupLights(in: uiView.scene?.rootNode)
-        
     }
     
     func setupLights(in rootNode: SCNNode?) {
