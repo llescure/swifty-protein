@@ -236,7 +236,7 @@ struct SceneKitView: UIViewRepresentable {
         
         uiView.scene?.rootNode.addChildNode(sphereNode)
     }
-
+    
     func createCube(uiView: SCNView, radius: CGFloat, color: UIColor, x: Float, y: Float, z: Float, atom: Atom) {
         // add a cube
         let cube = SCNBox(width: radius * 2, height: radius * 2, length: radius * 2, chamferRadius: 0)
