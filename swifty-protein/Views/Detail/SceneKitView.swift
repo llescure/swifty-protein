@@ -11,7 +11,7 @@ import SceneKit
 struct SceneKitView: UIViewRepresentable {
     @Binding var searchText: String
     @Binding var toggleHydrogen: Bool
-    @Binding var alternativeForm:  Bool
+    @Binding var alternativeForm: Bool
     @Binding var isLoading: Bool
     @Binding var isError: Bool
     
@@ -41,10 +41,10 @@ struct SceneKitView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: SCNView, context: Context) {
-        print ("Update UI View")
+        print("Update UI View")
         context.coordinator.scnView = uiView
         if !toggleHydrogen {
-            uiView.scene?.rootNode.enumerateChildNodes { (node, stop) in
+            uiView.scene?.rootNode.enumerateChildNodes { (node, _) in
                 // pop out lights
                 if node.name?.contains("Light") == true {
                     node.removeFromParentNode()
@@ -60,9 +60,9 @@ struct SceneKitView: UIViewRepresentable {
                 }
             }
         }
-
+        
         if !alternativeForm {
-            uiView.scene?.rootNode.enumerateChildNodes { (node, stop) in
+            uiView.scene?.rootNode.enumerateChildNodes { (node, _) in
                 // pop out lights
                 if node.name?.contains("Light") == true {
                     node.removeFromParentNode()
@@ -87,7 +87,7 @@ struct SceneKitView: UIViewRepresentable {
         if uiView.allowsCameraControl, uiView.pointOfView?.name == nil {
             uiView.pointOfView?.name = "userControlledCamera"
         }
-                
+        
         // add camera position
         cameraNode?.position = SCNVector3(x: 0, y: 0, z: 50)
         
@@ -107,8 +107,6 @@ struct SceneKitView: UIViewRepresentable {
         }
         // lights position
         setupLights(in: uiView.scene?.rootNode)
-        
-        
     }
     
     func setupLights(in rootNode: SCNNode?) {
@@ -178,8 +176,8 @@ struct SceneKitView: UIViewRepresentable {
                     isAtomSection = true
                     continue
                 }
-                if (atomCount > 1 && connectCount < 1) {
-                    print ("Error while fetching")
+                if atomCount > 1 && connectCount < 1 {
+                    print("Error while fetching")
                     isError = true
                     return (atoms, connects)
                 }
@@ -292,6 +290,3 @@ struct SceneKitView: UIViewRepresentable {
         }
     }
 }
-
-// TODO :
-// - Add a share button to share the image
