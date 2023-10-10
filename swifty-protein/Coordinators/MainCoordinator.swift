@@ -10,6 +10,7 @@ import SwiftUI
 struct MainCoordinator: View {
     @State private var path: [PushableView] = []
     @State private var isError: Bool = false
+    @State private var introDidComplete: Bool = false
     
     @Environment(\.scenePhase) var scenePhase
     
@@ -22,6 +23,14 @@ struct MainCoordinator: View {
             if scenePhase == .background {
                 path.removeAll()
             }
+        }
+        .task {
+            do {
+                try await Task.sleep(nanoseconds: 3_000_000_000)
+            } catch {
+                print("error")
+            }
+            introDidComplete = true
         }
     }
 }
@@ -52,9 +61,15 @@ internal extension MainCoordinator {
         }
     }
     
+    @ViewBuilder
     var contentView: some View {
-        LoginView(viewModel: .init()) {
-            path.append(.search)
+        if introDidComplete {
+            LoginView(viewModel: .init()) {
+                path.append(.search)
+            }
+        } else {
+            LaunchScreenView()
+                .transition(.opacity)
         }
     }
 }

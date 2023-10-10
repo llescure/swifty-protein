@@ -59,9 +59,9 @@ private extension LoginView {
         VStack(spacing: .zero) {
             Text("Swifty Protein")
                 .font(.largeTitle)
-//            LottieView(name: "loginAnimation")
-//                .scaledToFit()
-//                .frame(maxHeight: .infinity)
+            LottieView(name: "loginAnimation")
+                .scaledToFit()
+                .frame(maxHeight: .infinity)
             loginMethod()
         }
         .padding(.vertical, .xxLarge)
