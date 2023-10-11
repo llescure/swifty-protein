@@ -48,10 +48,7 @@ struct SceneKitView: UIViewRepresentable {
         if !toggleHydrogen {
             uiView.scene?.rootNode.enumerateChildNodes { (node, _) in
                 // pop out lights
-                if node.name?.contains("Light") == true {
-                    node.removeFromParentNode()
-                }
-                
+                if node.name?.contains("Light") == true { node.removeFromParentNode() }
                 // pop out hydrogen atom
                 if node.name?.contains("Atom") == true && node.name?.contains("H") == true {
                     node.removeFromParentNode()
@@ -62,21 +59,19 @@ struct SceneKitView: UIViewRepresentable {
                 }
             }
         }
-        
         if !alternativeForm {
             uiView.scene?.rootNode.enumerateChildNodes { (node, _) in
                 // pop out lights
                 if node.name?.contains("Light") == true {
                     node.removeFromParentNode()
                 }
-                
                 // pop out alternative form
                 if node.name?.contains("Atom") == true {
                     node.removeFromParentNode()
                 }
             }
         }
-        
+    
         var cameraNode = uiView.scene?.rootNode.childNode(withName: "cameraNode", recursively: false)
         
         if cameraNode == nil {
@@ -86,8 +81,7 @@ struct SceneKitView: UIViewRepresentable {
             uiView.scene?.rootNode.addChildNode(cameraNode!)
         }
         
-        if uiView.allowsCameraControl, uiView.pointOfView?.name == nil {
-            uiView.pointOfView?.name = "userControlledCamera"
+        if uiView.allowsCameraControl, uiView.pointOfView?.name == nil { uiView.pointOfView?.name = "userControlledCamera"
         }
         
         // add camera position
