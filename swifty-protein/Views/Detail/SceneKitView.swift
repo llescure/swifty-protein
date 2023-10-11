@@ -5,15 +5,19 @@
 //  Created by Julien Richard on 09/10/2023.
 //
 
-import SwiftUI
 import SceneKit
+import SwiftUI
+import UIKit
 
 struct SceneKitView: UIViewRepresentable {
-    @Binding var searchText: String
-    @Binding var toggleHydrogen: Bool
-    @Binding var alternativeForm: Bool
+    let searchText: String
+    let toggleHydrogen: Bool
+    let alternativeForm: Bool
     @Binding var isLoading: Bool
     @Binding var isError: Bool
+    var showShareLink: Bool
+    
+    private let zoom: Float = 22
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -29,14 +33,13 @@ struct SceneKitView: UIViewRepresentable {
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
         cameraNode.name = "userControlledCamera"
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 50)
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: zoom)
         sceneView.scene?.rootNode.addChildNode(cameraNode)
         sceneView.pointOfView = cameraNode
         
         let tapGesture = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleTap(_:)))
         tapGesture.delegate = context.coordinator
         sceneView.addGestureRecognizer(tapGesture)
-        
         return sceneView
     }
     
@@ -74,6 +77,7 @@ struct SceneKitView: UIViewRepresentable {
                 }
             }
         }
+
         
         var cameraNode = uiView.scene?.rootNode.childNode(withName: "cameraNode", recursively: false)
         
@@ -89,7 +93,7 @@ struct SceneKitView: UIViewRepresentable {
         }
         
         // add camera position
-        cameraNode?.position = SCNVector3(x: 0, y: 0, z: 50)
+        cameraNode?.position = SCNVector3(x: 0, y: 0, z: zoom)
         
         uiView.setNeedsDisplay()
         
@@ -107,8 +111,18 @@ struct SceneKitView: UIViewRepresentable {
         }
         // lights position
         setupLights(in: uiView.scene?.rootNode)
+        let image = uiView.snapshot()
+        let viewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
+        // save screen shot
+//        saveImage(uiView: uiView)
+        if !isLoading && showShareLink {
+            UIApplication.shared.windows.first?.rootViewController?.present(viewController, animated: false, completion: nil)
+        }
+        
     }
-    
+}
+
+private extension SceneKitView {
     func setupLights(in rootNode: SCNNode?) {
         let lightPositions = [
             SCNVector3(x: 0, y: 0, z: 50),  // Front
@@ -154,8 +168,8 @@ struct SceneKitView: UIViewRepresentable {
         }.resume()
         
         dispatchGroup.notify(queue: .main) {
-            completion(atoms, connects)
             isLoading = false
+            completion(atoms, connects)
         }
     }
     
@@ -228,7 +242,7 @@ struct SceneKitView: UIViewRepresentable {
         
         // add metadatas
         sphereNode.name = "Atom \(atom.id): \(atom.name)"
-        
+                
         // add a material to the sphere
         let material = SCNMaterial()
         material.diffuse.contents = color
@@ -287,6 +301,14 @@ struct SceneKitView: UIViewRepresentable {
             
             uiView.scene?.rootNode.addChildNode(CylinderLine(parent: uiView.scene!.rootNode, v1: adjustedFrom, v2: halfDistance, radius: radius, radSegmentCount: 10, color: fromColor, name: "Connection \(from.name) to \(to.name)"))
             uiView.scene?.rootNode.addChildNode(CylinderLine(parent: uiView.scene!.rootNode, v1: halfDistance, v2: adjustedTo, radius: radius, radSegmentCount: 10, color: toColor, name: "Connection \(from.name) to \(to.name)"))
+        }
+    }
+    
+    func saveImage(uiView: SCNView) {
+        if !isLoading && showShareLink {
+            let image = uiView.snapshot()
+            let viewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
+            UIApplication.shared.windows.first?.rootViewController?.present(viewController, animated: false, completion: nil)
         }
     }
 }
