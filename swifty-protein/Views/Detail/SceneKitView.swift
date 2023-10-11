@@ -14,6 +14,7 @@ struct SceneKitView: UIViewRepresentable {
     @Binding var alternativeForm: Bool
     @Binding var isLoading: Bool
     @Binding var isError: Bool
+    @State var isDisplayingAnError: Bool = false
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -41,6 +42,7 @@ struct SceneKitView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: SCNView, context: Context) {
+        if isDisplayingAnError { return }
         print("Update UI View")
         context.coordinator.scnView = uiView
         if !toggleHydrogen {
@@ -178,7 +180,8 @@ struct SceneKitView: UIViewRepresentable {
                 }
                 if atomCount > 1 && connectCount < 1 {
                     print("Error while fetching")
-                    isError = true
+                    self.isError = true
+                    self.isDisplayingAnError = true
                     return (atoms, connects)
                 }
                 if isAtomSection && atomCount > 0 {
