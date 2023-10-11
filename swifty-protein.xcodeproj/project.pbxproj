@@ -33,8 +33,6 @@
 		DBA6F06D2AC5776E00B4DF19 /* ButtonBouncyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6F06C2AC5776E00B4DF19 /* ButtonBouncyStyle.swift */; };
 		DBBF67792AC5E8BC00D26BA1 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF67782AC5E8BC00D26BA1 /* LottieView.swift */; };
 		DBC4DAA52AD552A800FFFD12 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC4DAA42AD552A800FFFD12 /* LaunchScreenView.swift */; };
-		DBC4DAA72AD552EA00FFFD12 /* introAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DBC4DAA62AD552EA00FFFD12 /* introAnimation.json */; };
-		DBC4DAA92AD552F000FFFD12 /* loginAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DBC4DAA82AD552F000FFFD12 /* loginAnimation.json */; };
 		DBE029AB2AC8566200880DE4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DBE029AA2AC8566200880DE4 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +64,6 @@
 		DBA6F06C2AC5776E00B4DF19 /* ButtonBouncyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBouncyStyle.swift; sourceTree = "<group>"; };
 		DBBF67782AC5E8BC00D26BA1 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		DBC4DAA42AD552A800FFFD12 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaunchScreenView.swift; path = "Swifty-protein/Views/LaunchScreen/LaunchScreenView.swift"; sourceTree = SOURCE_ROOT; };
-		DBC4DAA62AD552EA00FFFD12 /* introAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = introAnimation.json; path = ../../../../../../../../Downloads/introAnimation.json; sourceTree = "<group>"; };
-		DBC4DAA82AD552F000FFFD12 /* loginAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loginAnimation.json; path = ../../../../../../../../Downloads/loginAnimation.json; sourceTree = "<group>"; };
 		DBE029AA2AC8566200880DE4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -233,8 +229,6 @@
 		DBBF67772AC5DEFA00D26BA1 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				DBC4DAA82AD552F000FFFD12 /* loginAnimation.json */,
-				DBC4DAA62AD552EA00FFFD12 /* introAnimation.json */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -312,11 +306,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBC4DAA72AD552EA00FFFD12 /* introAnimation.json in Resources */,
 				DB7995E92AD054D3000DE064 /* ligands.txt in Resources */,
 				DBE029AB2AC8566200880DE4 /* .swiftlint.yml in Resources */,
 				DB7995EF2AD3E966000DE064 /* Assets.xcassets in Resources */,
-				DBC4DAA92AD552F000FFFD12 /* loginAnimation.json in Resources */,
 				DB7995CA2ACF37A0000DE064 /* Contents.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,7 +493,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"swifty-protein/Preview Content\"";
-				DEVELOPMENT_TEAM = 4S2R248368;
+				DEVELOPMENT_TEAM = 86VT643277;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -522,7 +514,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "LeaL.swifty-protein";
+				PRODUCT_BUNDLE_IDENTIFIER = "-2.swifty-protein";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -543,7 +535,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"swifty-protein/Preview Content\"";
-				DEVELOPMENT_TEAM = 4S2R248368;
+				DEVELOPMENT_TEAM = 86VT643277;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -564,7 +556,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "LeaL.swifty-protein";
+				PRODUCT_BUNDLE_IDENTIFIER = "-2.swifty-protein";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

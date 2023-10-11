@@ -13,9 +13,9 @@ struct SceneKitView: UIViewRepresentable {
     let searchText: String
     let toggleHydrogen: Bool
     let alternativeForm: Bool
+
     @Binding var isLoading: Bool
     @Binding var isError: Bool
-    var showShareLink: Bool
     
     private let zoom: Float = 22
     
@@ -24,6 +24,12 @@ struct SceneKitView: UIViewRepresentable {
     }
     
     func makeUIView(context: Context) -> SCNView {
+        let sceneView = createSceneView(context: context)
+        setupGestureRecognizers(sceneView, context: context)
+        return sceneView
+    }
+    
+    private func createSceneView(context: Context) -> SCNView {
         let sceneView = SCNView()
         sceneView.backgroundColor = UIColor(white: 0.9, alpha: 1)
         sceneView.scene = SCNScene()
@@ -37,88 +43,77 @@ struct SceneKitView: UIViewRepresentable {
         sceneView.scene?.rootNode.addChildNode(cameraNode)
         sceneView.pointOfView = cameraNode
         
-        let tapGesture = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleTap(_:)))
-        tapGesture.delegate = context.coordinator
-        sceneView.addGestureRecognizer(tapGesture)
         return sceneView
     }
     
+    private func setupGestureRecognizers(_ sceneView: SCNView, context: Context) {
+        let tapGesture = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleTap(_:)))
+        tapGesture.delegate = context.coordinator
+        
+        sceneView.addGestureRecognizer(tapGesture)
+    }
+
     func updateUIView(_ uiView: SCNView, context: Context) {
         print("Update UI View")
         context.coordinator.scnView = uiView
+        
+        removeUnwantedNodes(from: uiView)
+        setupCamera(in: uiView)
+        
+        getSdfFile(moleculeCode: searchText) { atoms, connects in
+            createAtomsAndConnections(uiView: uiView, atoms: atoms, connects: connects)
+        }
+        
+        setupLights(in: uiView.scene?.rootNode)
+        uiView.setNeedsDisplay()
+        print("Update UI View done")
+    }
+    
+    func removeUnwantedNodes(from uiView: SCNView) {
         if !toggleHydrogen {
-            uiView.scene?.rootNode.enumerateChildNodes { (node, _) in
-                // pop out lights
-                if node.name?.contains("Light") == true {
-                    node.removeFromParentNode()
-                }
-                
-                // pop out hydrogen atom
-                if node.name?.contains("Atom") == true && node.name?.contains("H") == true {
-                    node.removeFromParentNode()
-                }
-                // pop out hydrogen connection
-                if node.name?.contains("Connection") == true && (node.name?.contains("H") == true) {
-                    node.removeFromParentNode()
-                }
-            }
+            removeNodes(from: uiView, matching: ["Light", "H"])
         }
-        
         if !alternativeForm {
-            uiView.scene?.rootNode.enumerateChildNodes { (node, _) in
-                // pop out lights
-                if node.name?.contains("Light") == true {
-                    node.removeFromParentNode()
-                }
-                
-                // pop out alternative form
-                if node.name?.contains("Atom") == true {
-                    node.removeFromParentNode()
-                }
+            removeNodes(from: uiView, matching: ["Light", "Atom"])
+        }
+        print("Remove unwanted nodes done")
+    }
+
+    private func removeNodes(from uiView: SCNView, matching names: [String]) {
+        uiView.scene?.rootNode.enumerateChildNodes { (node, _) in
+            for name in names where node.name?.contains(name) == true {
+                node.removeFromParentNode()
             }
         }
+    }
 
-        
+    private func setupCamera(in uiView: SCNView) {
         var cameraNode = uiView.scene?.rootNode.childNode(withName: "cameraNode", recursively: false)
-        
         if cameraNode == nil {
             cameraNode = SCNNode()
             cameraNode?.camera = SCNCamera()
             cameraNode?.name = "cameraNode"
             uiView.scene?.rootNode.addChildNode(cameraNode!)
         }
-        
         if uiView.allowsCameraControl, uiView.pointOfView?.name == nil {
             uiView.pointOfView?.name = "userControlledCamera"
         }
-        
-        // add camera position
         cameraNode?.position = SCNVector3(x: 0, y: 0, z: zoom)
-        
-        uiView.setNeedsDisplay()
-        
-        getSdfFile(moleculeCode: searchText) { atoms, connects in
-            for atom in atoms {
-                self.createAtom(uiView: uiView, atom: atom)
-            }
-            for connect in connects {
-                if let from = atoms.first(where: {$0.id == connect.from}) {
-                    if let to = atoms.first(where: {$0.id == connect.to}) {
-                        self.createConnection(uiView: uiView, from: from, to: to, weight: connect.weight)
-                    }
+        print("Setup camera done")
+    }
+
+    private func createAtomsAndConnections(uiView: SCNView, atoms: [Atom], connects: [Connect]) {
+        for atom in atoms {
+            self.createAtom(uiView: uiView, atom: atom)
+        }
+        for connect in connects {
+            if let from = atoms.first(where: {$0.id == connect.from}) {
+                if let to = atoms.first(where: {$0.id == connect.to}) {
+                    self.createConnection(uiView: uiView, from: from, to: to, weight: connect.weight)
                 }
             }
         }
-        // lights position
-        setupLights(in: uiView.scene?.rootNode)
-        let image = uiView.snapshot()
-        let viewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
-        // save screen shot
-//        saveImage(uiView: uiView)
-        if !isLoading && showShareLink {
-            UIApplication.shared.windows.first?.rootViewController?.present(viewController, animated: false, completion: nil)
-        }
-        
+        print("Create atoms and connections done")
     }
 }
 
@@ -301,14 +296,6 @@ private extension SceneKitView {
             
             uiView.scene?.rootNode.addChildNode(CylinderLine(parent: uiView.scene!.rootNode, v1: adjustedFrom, v2: halfDistance, radius: radius, radSegmentCount: 10, color: fromColor, name: "Connection \(from.name) to \(to.name)"))
             uiView.scene?.rootNode.addChildNode(CylinderLine(parent: uiView.scene!.rootNode, v1: halfDistance, v2: adjustedTo, radius: radius, radSegmentCount: 10, color: toColor, name: "Connection \(from.name) to \(to.name)"))
-        }
-    }
-    
-    func saveImage(uiView: SCNView) {
-        if !isLoading && showShareLink {
-            let image = uiView.snapshot()
-            let viewController = UIActivityViewController(activityItems: [image], applicationActivities: [])
-            UIApplication.shared.windows.first?.rootViewController?.present(viewController, animated: false, completion: nil)
         }
     }
 }

@@ -9,13 +9,14 @@ import SwiftUI
 import SceneKit
 
 struct DetailView: View {
+    // MARK: - Properties
     @State var searchText: String
     @State var toggleHydrogen: Bool = false
     @State var alternativeForm: Bool = false
     @State var isLoading: Bool = true
-    @State var showShareLink: Bool = false
     @Binding var isError: Bool
     
+    // MARK: - Body
     var body: some View {
         contentView
     }
@@ -27,7 +28,7 @@ private extension DetailView {
         VStack {
             toggle
             ZStack {
-                SceneKitView(searchText: searchText, toggleHydrogen: toggleHydrogen, alternativeForm: alternativeForm, isLoading: $isLoading, isError: $isError, showShareLink: showShareLink)
+                SceneKitView(searchText: searchText, toggleHydrogen: toggleHydrogen, alternativeForm: alternativeForm, isLoading: $isLoading, isError: $isError)
                 
                 if isLoading {
                     ProgressView()
@@ -49,13 +50,7 @@ private extension DetailView {
                 Toggle(isOn: $alternativeForm) {
                     Text("Alt.")
                 }
-                Button(action: {
-                    self.showShareLink = true
-                }, label: {
-                    Image(systemName: "square.and.arrow.up")
-                })
             }
-            .padding()
         }
     }
 }
