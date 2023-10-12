@@ -11,14 +11,20 @@ import SceneKit
 struct DetailView: View {
     // MARK: - Properties
     @State var searchText: String
-    @State var toggleHydrogen: Bool = false
-    @State var alternativeForm: Bool = false
-    @State var isLoading: Bool = true
-    @Binding var isError: Bool
+    @State private var toggleHydrogen: Bool = false
+    @State private var alternativeForm: Bool = false
+    @State private var isLoading: Bool = true
+    @State private var isError: Bool = false
+    
+    let onError: () -> Void
     
     // MARK: - Body
     var body: some View {
         contentView
+            .alert(isPresented: $isError) {
+                Alert(title: Text("Error"), message: Text("⚠️ An error occured while loading the molecule"), dismissButton: .default(Text("OK")) {
+                    onError()
+                })}
     }
 }
 
