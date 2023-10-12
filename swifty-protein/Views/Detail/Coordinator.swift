@@ -85,7 +85,7 @@ class Coordinator: NSObject, UIGestureRecognizerDelegate {
         // Adjust camera position if no atom is touched
         SCNTransaction.begin()
         SCNTransaction.animationDuration = 0.5
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 50)
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: 22)
         SCNTransaction.commit()
     }
 

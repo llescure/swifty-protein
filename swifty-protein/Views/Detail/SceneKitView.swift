@@ -54,7 +54,6 @@ struct SceneKitView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: SCNView, context: Context) {
-        print("Update UI View")
         context.coordinator.scnView = uiView
         
         removeUnwantedNodes(from: uiView)
@@ -66,7 +65,6 @@ struct SceneKitView: UIViewRepresentable {
         
         setupLights(in: uiView.scene?.rootNode)
         uiView.setNeedsDisplay()
-        print("Update UI View done")
     }
     
     func removeUnwantedNodes(from uiView: SCNView) {
@@ -76,7 +74,6 @@ struct SceneKitView: UIViewRepresentable {
         if !alternativeForm {
             removeNodes(from: uiView, matching: ["Light", "Atom"])
         }
-        print("Remove unwanted nodes done")
     }
 
     private func removeNodes(from uiView: SCNView, matching names: [String]) {
@@ -99,7 +96,6 @@ struct SceneKitView: UIViewRepresentable {
             uiView.pointOfView?.name = "userControlledCamera"
         }
         cameraNode?.position = SCNVector3(x: 0, y: 0, z: zoom)
-        print("Setup camera done")
     }
 
     private func createAtomsAndConnections(uiView: SCNView, atoms: [Atom], connects: [Connect]) {
@@ -113,7 +109,6 @@ struct SceneKitView: UIViewRepresentable {
                 }
             }
         }
-        print("Create atoms and connections done")
     }
 }
 
