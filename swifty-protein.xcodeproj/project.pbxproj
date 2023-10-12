@@ -34,6 +34,8 @@
 		DBA6F06A2AC479FD00B4DF19 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6F0692AC479FD00B4DF19 /* MainCoordinator.swift */; };
 		DBA6F06D2AC5776E00B4DF19 /* ButtonBouncyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6F06C2AC5776E00B4DF19 /* ButtonBouncyStyle.swift */; };
 		DBA9AE652AD6A5A50018F12F /* loginAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DBA9AE642AD6A5A50018F12F /* loginAnimation.json */; };
+		DBB15B192AD8366800B68593 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB15B182AD8366800B68593 /* ShareView.swift */; };
+		DBB15B1C2AD8386500B68593 /* ShareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB15B1B2AD8386500B68593 /* ShareViewModel.swift */; };
 		DBBF67792AC5E8BC00D26BA1 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF67782AC5E8BC00D26BA1 /* LottieView.swift */; };
 		DBC4DAA52AD552A800FFFD12 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC4DAA42AD552A800FFFD12 /* LaunchScreenView.swift */; };
 		DBE029AB2AC8566200880DE4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DBE029AA2AC8566200880DE4 /* .swiftlint.yml */; };
@@ -47,7 +49,7 @@
 		8BECC5CB2AD415DD0032BC1D /* SceneKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneKitView.swift; sourceTree = "<group>"; };
 		8BECC5CC2AD415DD0032BC1D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		DB1ED1C72AD6B65A00C2534E /* introAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = introAnimation.json; sourceTree = "<group>"; };
-		DB1ED1D32AD8268E00C2534E /* ShareableDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShareableDetailView.swift; path = "Swifty-protein/Views/Detail/ShareableDetailView.swift"; sourceTree = SOURCE_ROOT; };
+		DB1ED1D32AD8268E00C2534E /* ShareableDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShareableDetailView.swift; path = "swifty-protein/Views/ShareView/ShareableDetailView.swift"; sourceTree = SOURCE_ROOT; };
 		DB4411312AD44628006DB9B5 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailView.swift; path = "Swifty-protein/Views/Detail/DetailView.swift"; sourceTree = SOURCE_ROOT; };
 		DB7600FF2AC33D9400A606BD /* swifty-protein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swifty-protein.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7601022AC33D9400A606BD /* swifty_proteinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swifty_proteinApp.swift; sourceTree = "<group>"; };
@@ -68,6 +70,8 @@
 		DBA6F0692AC479FD00B4DF19 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		DBA6F06C2AC5776E00B4DF19 /* ButtonBouncyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBouncyStyle.swift; sourceTree = "<group>"; };
 		DBA9AE642AD6A5A50018F12F /* loginAnimation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = loginAnimation.json; path = "Swifty-protein/Design System/Utils/Assets/Animation/loginAnimation.json"; sourceTree = SOURCE_ROOT; };
+		DBB15B182AD8366800B68593 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShareView.swift; path = "swifty-protein/Views/ShareView/ShareView.swift"; sourceTree = SOURCE_ROOT; };
+		DBB15B1B2AD8386500B68593 /* ShareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShareViewModel.swift; path = "Swifty-protein/Views/ShareView/ShareViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		DBBF67782AC5E8BC00D26BA1 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		DBC4DAA42AD552A800FFFD12 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaunchScreenView.swift; path = "Swifty-protein/Views/LaunchScreen/LaunchScreenView.swift"; sourceTree = SOURCE_ROOT; };
 		DBE029AA2AC8566200880DE4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 		DB7601112AC33E6500A606BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DBB15B1A2AD837C700B68593 /* ShareView */,
 				DBC4DAA32AD5529600FFFD12 /* LaunchScreen */,
 				DB76011A2AC3408600A606BD /* Detail */,
 				DB7601152AC33F5A00A606BD /* Search */,
@@ -163,7 +168,6 @@
 				8BECC5CB2AD415DD0032BC1D /* SceneKitView.swift */,
 				8BECC5CC2AD415DD0032BC1D /* Utils.swift */,
 				DB4411312AD44628006DB9B5 /* DetailView.swift */,
-				DB1ED1D32AD8268E00C2534E /* ShareableDetailView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -211,6 +215,16 @@
 				DBBF67782AC5E8BC00D26BA1 /* LottieView.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		DBB15B1A2AD837C700B68593 /* ShareView */ = {
+			isa = PBXGroup;
+			children = (
+				DBB15B182AD8366800B68593 /* ShareView.swift */,
+				DB1ED1D32AD8268E00C2534E /* ShareableDetailView.swift */,
+				DBB15B1B2AD8386500B68593 /* ShareViewModel.swift */,
+			);
+			path = ShareView;
 			sourceTree = "<group>";
 		};
 		DBBF67712AC5DED100D26BA1 /* Modifier */ = {
@@ -353,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBB15B192AD8366800B68593 /* ShareView.swift in Sources */,
 				DB7601172AC33FF600A606BD /* SearchView.swift in Sources */,
 				DB7995EB2AD18D89000DE064 /* PaddingModifier.swift in Sources */,
 				DB9580272AC6C32000C7BC6E /* Spacing.swift in Sources */,
@@ -370,6 +385,7 @@
 				8BECC5D02AD415DD0032BC1D /* Connect.swift in Sources */,
 				DB7601032AC33D9400A606BD /* swifty_proteinApp.swift in Sources */,
 				8BECC5CD2AD415DD0032BC1D /* CylinderLine.swift in Sources */,
+				DBB15B1C2AD8386500B68593 /* ShareViewModel.swift in Sources */,
 				DB1ED1D42AD8268E00C2534E /* ShareableDetailView.swift in Sources */,
 				DB7601142AC33E9700A606BD /* LoginViewModel.swift in Sources */,
 				DB7995DB2AD051CD000DE064 /* Ligand.swift in Sources */,
