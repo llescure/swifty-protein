@@ -62,13 +62,16 @@ internal extension MainCoordinator {
                         path.removeLast()
                     })
                 }
-            Button("Partager") {
+            Button(action: {
                 if let view = capturedView {
                     if let image = captureScreen(view: view) {
                         shareImage(image)
                     }
                 }
-            }
+            }, label: {
+                Image(systemName: "square.and.arrow.up")
+                    .padding()
+            })
         }
     }
     func captureScreen(view: UIView) -> UIImage? {

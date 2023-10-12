@@ -69,11 +69,9 @@ extension LoginViewModel {
                 if success {
                     self.userAuthenticationStatus = .success
                     self.didAuthenticationFail = false
-                    print("You are authenticated")
                 } else {
                     self.userAuthenticationStatus = .failure
                     self.didAuthenticationFail = true
-                    print("We could not authenticate you")
                 }
             }
         }
