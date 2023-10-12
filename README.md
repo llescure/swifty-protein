@@ -1,6 +1,6 @@
 # Swifty Proteins
 
-![Swifty Proteins](./swifty-protein/images/swifty-protein.png)
+![Swifty Proteins](./images/swifty-proteins.png)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/llescure/swifty-protein)
 ![GitHub stars](https://img.shields.io/github/stars/llescure/swifty-protein)
@@ -74,9 +74,20 @@ To use the app:
 
 ## Screenshots
 
-![Login](./swifty-protein/images/swifty-protein-login.gif)
-![Search](./swifty-protein/images/swifty-protein-search.gif)
-![Model](./swifty-protein/images/swifty-protein-model.gif)
-![Share](./swifty-protein/images/swifty-protein-share.gif)
+### Login view
+
+![Login](./images/swifty-protein-login.gif)
+
+### Search model view
+
+![Search](./images/swifty-protein-search.gif)
+
+### Model view
+
+![Model](./images/swifty-protein-model.gif)
+
+### Share view
+
+![Share](./images/swifty-protein-share.gif)
 
 ---
