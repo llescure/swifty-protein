@@ -14,6 +14,7 @@ struct SceneKitView: UIViewRepresentable {
     @Binding var alternativeForm: Bool
     @Binding var isLoading: Bool
     @Binding var isError: Bool
+    @State var isDisplayingAnError: Bool = false
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -41,15 +42,13 @@ struct SceneKitView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: SCNView, context: Context) {
+        if isDisplayingAnError { return }
         print("Update UI View")
         context.coordinator.scnView = uiView
         if !toggleHydrogen {
             uiView.scene?.rootNode.enumerateChildNodes { (node, _) in
                 // pop out lights
-                if node.name?.contains("Light") == true {
-                    node.removeFromParentNode()
-                }
-                
+                if node.name?.contains("Light") == true { node.removeFromParentNode() }
                 // pop out hydrogen atom
                 if node.name?.contains("Atom") == true && node.name?.contains("H") == true {
                     node.removeFromParentNode()
@@ -60,21 +59,19 @@ struct SceneKitView: UIViewRepresentable {
                 }
             }
         }
-        
         if !alternativeForm {
             uiView.scene?.rootNode.enumerateChildNodes { (node, _) in
                 // pop out lights
                 if node.name?.contains("Light") == true {
                     node.removeFromParentNode()
                 }
-                
                 // pop out alternative form
                 if node.name?.contains("Atom") == true {
                     node.removeFromParentNode()
                 }
             }
         }
-        
+    
         var cameraNode = uiView.scene?.rootNode.childNode(withName: "cameraNode", recursively: false)
         
         if cameraNode == nil {
@@ -84,8 +81,7 @@ struct SceneKitView: UIViewRepresentable {
             uiView.scene?.rootNode.addChildNode(cameraNode!)
         }
         
-        if uiView.allowsCameraControl, uiView.pointOfView?.name == nil {
-            uiView.pointOfView?.name = "userControlledCamera"
+        if uiView.allowsCameraControl, uiView.pointOfView?.name == nil { uiView.pointOfView?.name = "userControlledCamera"
         }
         
         // add camera position
@@ -178,7 +174,8 @@ struct SceneKitView: UIViewRepresentable {
                 }
                 if atomCount > 1 && connectCount < 1 {
                     print("Error while fetching")
-                    isError = true
+                    self.isError = true
+                    self.isDisplayingAnError = true
                     return (atoms, connects)
                 }
                 if isAtomSection && atomCount > 0 {
