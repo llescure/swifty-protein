@@ -235,6 +235,7 @@
 			children = (
 				DB1ED1C72AD6B65A00C2534E /* introAnimation.json */,
 				DBA9AE642AD6A5A50018F12F /* loginAnimation.json */,
+
 			);
 			path = Animation;
 			sourceTree = "<group>";
