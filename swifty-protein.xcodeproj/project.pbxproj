@@ -14,6 +14,7 @@
 		8BECC5D22AD415DD0032BC1D /* SceneKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECC5CB2AD415DD0032BC1D /* SceneKitView.swift */; };
 		8BECC5D32AD415DD0032BC1D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECC5CC2AD415DD0032BC1D /* Utils.swift */; };
 		DB1ED1C82AD6B65A00C2534E /* introAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = DB1ED1C72AD6B65A00C2534E /* introAnimation.json */; };
+		DB1ED1D42AD8268E00C2534E /* ShareableDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1ED1D32AD8268E00C2534E /* ShareableDetailView.swift */; };
 		DB4411322AD44628006DB9B5 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4411312AD44628006DB9B5 /* DetailView.swift */; };
 		DB7601032AC33D9400A606BD /* swifty_proteinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601022AC33D9400A606BD /* swifty_proteinApp.swift */; };
 		DB7601052AC33D9400A606BD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7601042AC33D9400A606BD /* LoginView.swift */; };
@@ -46,6 +47,7 @@
 		8BECC5CB2AD415DD0032BC1D /* SceneKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneKitView.swift; sourceTree = "<group>"; };
 		8BECC5CC2AD415DD0032BC1D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		DB1ED1C72AD6B65A00C2534E /* introAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = introAnimation.json; sourceTree = "<group>"; };
+		DB1ED1D32AD8268E00C2534E /* ShareableDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShareableDetailView.swift; path = "Swifty-protein/Views/Detail/ShareableDetailView.swift"; sourceTree = SOURCE_ROOT; };
 		DB4411312AD44628006DB9B5 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailView.swift; path = "Swifty-protein/Views/Detail/DetailView.swift"; sourceTree = SOURCE_ROOT; };
 		DB7600FF2AC33D9400A606BD /* swifty-protein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swifty-protein.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7601022AC33D9400A606BD /* swifty_proteinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swifty_proteinApp.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				8BECC5CB2AD415DD0032BC1D /* SceneKitView.swift */,
 				8BECC5CC2AD415DD0032BC1D /* Utils.swift */,
 				DB4411312AD44628006DB9B5 /* DetailView.swift */,
+				DB1ED1D32AD8268E00C2534E /* ShareableDetailView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				8BECC5D02AD415DD0032BC1D /* Connect.swift in Sources */,
 				DB7601032AC33D9400A606BD /* swifty_proteinApp.swift in Sources */,
 				8BECC5CD2AD415DD0032BC1D /* CylinderLine.swift in Sources */,
+				DB1ED1D42AD8268E00C2534E /* ShareableDetailView.swift in Sources */,
 				DB7601142AC33E9700A606BD /* LoginViewModel.swift in Sources */,
 				DB7995DB2AD051CD000DE064 /* Ligand.swift in Sources */,
 				DBC4DAA52AD552A800FFFD12 /* LaunchScreenView.swift in Sources */,
@@ -506,6 +510,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "swifty-protein/Info.plist";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -548,6 +553,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "swifty-protein/Info.plist";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;

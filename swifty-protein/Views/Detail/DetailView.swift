@@ -9,6 +9,7 @@ import SwiftUI
 import SceneKit
 
 struct DetailView: View {
+    // MARK: - Properties
     @State var searchText: String
     @State private var toggleHydrogen: Bool = false
     @State private var alternativeForm: Bool = false
@@ -17,6 +18,7 @@ struct DetailView: View {
     
     let onError: () -> Void
     
+    // MARK: - Body
     var body: some View {
         contentView
             .alert(isPresented: $isError) {
@@ -26,28 +28,34 @@ struct DetailView: View {
     }
 }
 
+// MARK: - UI Management
 private extension DetailView {
     var contentView: some View {
         VStack {
-            HStack {
-                // add toggle hydrogen switch
-                Toggle(isOn: $toggleHydrogen) {
-                    Text("Hydro.")
-                }
-                .padding()
-                // add toggle alternative form switch
-                Toggle(isOn: $alternativeForm) {
-                    Text("Alt.")
-                }
-                .padding()
-            }
+            toggle
             ZStack {
-                SceneKitView(searchText: $searchText, toggleHydrogen: $toggleHydrogen, alternativeForm: $alternativeForm, isLoading: $isLoading, isError: $isError)
+                SceneKitView(searchText: searchText, toggleHydrogen: toggleHydrogen, alternativeForm: alternativeForm, isLoading: $isLoading, isError: $isError)
+                
                 if isLoading {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: .gray))
                         .scaleEffect(2)
                 }
+            }
+        }
+    }
+    
+    var toggle: some View {
+        HStack(alignment: .firstTextBaseline) {
+            Group {
+                // add toggle hydrogen switch
+                Toggle(isOn: $toggleHydrogen) {
+                    Text("Hydro.")
+                }.padding()
+                // add toggle alternative form switch
+                Toggle(isOn: $alternativeForm) {
+                    Text("Alt.")
+                }.padding()
             }
         }
     }
