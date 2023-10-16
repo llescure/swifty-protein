@@ -161,8 +161,6 @@
 		DB76011A2AC3408600A606BD /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				8BECC5C82AD415DD0032BC1D /* Atom.swift */,
-				8BECC5C92AD415DD0032BC1D /* Connect.swift */,
 				8BECC5C72AD415DC0032BC1D /* Coordinator.swift */,
 				8BECC5C62AD415DC0032BC1D /* CylinderLine.swift */,
 				8BECC5CB2AD415DD0032BC1D /* SceneKitView.swift */,
@@ -175,6 +173,8 @@
 		DB7995D92AD051BD000DE064 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8BECC5C82AD415DD0032BC1D /* Atom.swift */,
+				8BECC5C92AD415DD0032BC1D /* Connect.swift */,
 				DB7995E82AD054D3000DE064 /* ligands.txt */,
 				DB7995DA2AD051CD000DE064 /* Ligand.swift */,
 			);
@@ -303,7 +303,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "swifty-protein" */;
+			buildConfigurationList = DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "Swifty-protein" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -521,7 +521,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"swifty-protein/Preview Content\"";
-				DEVELOPMENT_TEAM = 86VT643277;
+				DEVELOPMENT_TEAM = 4S2R248368;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -543,7 +543,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-2.swifty-protein";
+				PRODUCT_BUNDLE_IDENTIFIER = "LeaL.swifty-protein";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -564,7 +564,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"swifty-protein/Preview Content\"";
-				DEVELOPMENT_TEAM = 86VT643277;
+				DEVELOPMENT_TEAM = 4S2R248368;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -586,7 +586,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-2.swifty-protein";
+				PRODUCT_BUNDLE_IDENTIFIER = "LeaL.swifty-protein";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -600,7 +600,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "swifty-protein" */ = {
+		DB7600FA2AC33D9400A606BD /* Build configuration list for PBXProject "Swifty-protein" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB76010C2AC33D9800A606BD /* Debug */,
