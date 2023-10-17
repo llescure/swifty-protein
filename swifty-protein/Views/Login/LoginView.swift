@@ -106,7 +106,7 @@ private extension LoginView {
             Button(action: {
                 viewModel.checkField()
                 if !viewModel.isTextFieldIsIncorrect {
-                    onUserAuthenticated()
+                    viewModel.authenticateManuallyUser(action: { onUserAuthenticated() })
                 }
             }, label: {
                 Text("Log in")
@@ -131,7 +131,7 @@ private extension LoginView {
             viewModel.shouldCheckTextField = true
             viewModel.checkField()
             if !viewModel.isTextFieldIsIncorrect {
-                onUserAuthenticated()
+                viewModel.authenticateManuallyUser(action: { onUserAuthenticated() })
             }
         }
     }
