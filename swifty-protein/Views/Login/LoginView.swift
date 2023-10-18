@@ -36,6 +36,8 @@ struct LoginView: View {
         // Biometry management
             .onAppear {
                 self.isBiometryAvailable = viewModel.checkBiometry()
+                self.viewModel.login = ""
+                self.viewModel.password = ""
             }
             .onChange(of: viewModel.userAuthenticationStatus, perform: { userAuthenticationStatus in
                 if userAuthenticationStatus == .success {
