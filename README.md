@@ -86,8 +86,4 @@ To use the app:
 
 ![Model](./images/swifty-protein-model.gif)
 
-### Share view
-
-![Share](./images/swifty-protein-share.gif)
-
 ---
